@@ -1,3 +1,8 @@
+<script>
+
+	import CertCard from "../Cert_card.svelte";
+
+</script>
 <svelte:head>
 	<title>Check</title>
 	<meta name="description" content="Check SBT token" />
@@ -17,6 +22,6 @@
 	</p>
 
 	<p>
-		
+		<CertCard /> 
 	</p>
 </div>
