@@ -1,6 +1,6 @@
 import { dev } from '$app/environment';
 import { Actor, HttpAgent } from '@dfinity/agent';
-import { doctoken } from 'doctoken.did';
+import { idlFactory as doctoken } from './service.did.js';
 
 // ID вашего канистера
 const doctoken_id = 'h5x3q-hyaaa-aaaal-adg6q-cai';
