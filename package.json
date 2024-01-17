@@ -13,6 +13,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@dfinity/agent": "^0.15.7",
 		"@fontsource/fira-mono": "^4.5.10",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.40.1",
@@ -29,8 +30,7 @@
 		"typescript": "^5.3.3",
 		"vite": "^4.5.1",
 		"vitest": "^0.25.8",
-		"web-vitals": "^3.5.0",
-		"@dfinity/agent": "^0.15.6"
+		"web-vitals": "^3.5.0"
 	},
 	"type": "module"
 }
