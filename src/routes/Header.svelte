@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/logo.png';
 	import github from '$lib/images/github.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="https://ava.capetown/en">
+			<img src={logo} alt="aVa Home" />
 		</a>
 	</div>
 
@@ -22,7 +22,10 @@
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname.startsWith('/check') ? 'page' : undefined}>
+				<a href="/check">Check</a>
+			</li>
+			<li aria-current={$page.url.pathname.startsWith('/game') ? 'page' : undefined}>
 				<a href="/sverdle">Sverdle</a>
 			</li>
 		</ul>
