@@ -1,6 +1,6 @@
 <script>
 	import arrow from '$lib/images/arrow.svg';
-    import aVa_logo from '$lib/images/aVa_logo.svg';
+    import aVa_logo from '$lib/images/aVa_logo.png';
 	import card_background from '$lib/images/card-background.svg';
 	import evolution from '$lib/images/evolution.svg';
 
