@@ -1,14 +1,14 @@
 <script>
 	import arrow from '$lib/images/arrow.svg';
-    import aVa_logo from '$lib/images/aVa_logo.png';
+	import aVa_logo from '$lib/images/aVa_logo.png';
 	import card_background from '$lib/images/card-background.svg';
 	import evolution from '$lib/images/evolution.svg';
 
-    import card_title from '$lib/images/card-title-not-filled.svg';
+	import card_title from '$lib/images/card-title-not-filled.svg';
 
-    import icp_logo from '$lib/images/icp-logo.svg';
+	import icp_logo from '$lib/images/icp-logo.svg';
 
-    import rep2 from '$lib/images/rep2.svg';
+	import rep2 from '$lib/images/rep2.svg';
 
 	// import Card from "./Card.svelte";
 
@@ -182,16 +182,17 @@
         </form>
     </div> -->
 
-	<div class="card">
+	<div style="background-image: url({card_background})" class="card">
 		<div class="card-header">
-			<a href={website} target="_blank" class="card-logo-link"><div class="card-logo" /></a>
-
+			<a href={website} target="_blank" class="card-logo-link">
+				<div style="background-image: url({aVa_logo})" class="card-logo" /></a
+			>
 			<div class="title">
 				<img src={card_title} alt="dSBT" />
 			</div>
 
 			<div class="card-reputation">
-				<div class="reputation-icon" />
+				<div style="background-image: url({rep2})" class="reputation-icon" />
 				<div class="reputation-value">
 					{badgeReceipt.reputation.total}
 				</div>
