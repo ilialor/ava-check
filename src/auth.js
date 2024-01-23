@@ -1,10 +1,13 @@
 import { writable } from 'svelte/store';
 import { AuthClient } from '@dfinity/auth-client';
+import { browser } from '$app/environment';
 
 export const principalId = writable('');
 export const isAuthenticated = writable(false);
 
 async function initializeAuthClient() {
+  if (!browser) return; // Добавляем проверку флага здесь
+
   const authClient = await AuthClient.create();
 
   if (await authClient.isAuthenticated()) {
@@ -15,6 +18,8 @@ async function initializeAuthClient() {
 }
 
 export async function loginII() {
+  if (!browser) return; // Добавляем проверку флага и здесь
+
   const authClient = await AuthClient.create();
   const iiUrl = 'https://identity.ic0.app'; // URL of the Internet Identity provider
 
@@ -32,10 +37,14 @@ export async function loginII() {
 }
 
 export function logout() {
+  if (!browser) return; // И здесь также
+
   localStorage.removeItem('ic-delegation');
   localStorage.removeItem('ic-identity');
   isAuthenticated.set(false);
   principalId.set('');
 }
 
-initializeAuthClient();
+if (browser) {
+  initializeAuthClient(); // Обернуть вызов этой функции в проверку флага
+}

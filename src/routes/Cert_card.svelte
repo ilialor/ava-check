@@ -1,4 +1,7 @@
 <script>
+	import logo_agora from '$lib/images/logo.svg';
+	import logo_ava from '$lib/images/logo.png';
+
 	const badgeReceipt = {
 		owner: 'Ivone Drake',
 		userId: 2300900923,
@@ -74,13 +77,13 @@
 
 		<div class="certificate__logo">
 			<a href={badgeReceipt.reputation.evolution}>
-				<img src="./assets/logo.svg" alt="Agorapp" />
+				<img src={logo_agora} alt="Agorapp" />
 			</a>
 		</div>
 
 		<div class="certificate__ava-link">
 			<a href={badgeReceipt.reputation.evolution}>
-				<img src="./assets/fox.svg" alt="ava.capetown" />
+				<img src={logo_ava} alt="ava.capetown" />
 			</a>
 		</div>
 
