@@ -1,4 +1,4 @@
-import { dev } from '$app/environment';
+import { browser, dev } from '$app/environment';
 import { Actor, HttpAgent } from '@dfinity/agent';
 import { AuthClient } from '@dfinity/auth-client';
 import { idlFactory as doctoken } from './service.did.js';
@@ -44,10 +44,10 @@ doctoken_canister.getDocumentById(tokenId).then(response => {
 });
 
 // Инициализация AuthClient
-if (typeof window !== "undefined") {
+if (browser) {
     // Этот код будет выполнен только на клиентской стороне
     initializeAuthClient().then(authClient => {
-        // Здесь можно выполнить действия с authClient, например, проверить аутентификацию
+        // Здесь можно выполнить действия с authClient
     });
 }
 
