@@ -8,7 +8,7 @@ const rep_canister = "aoxye-tiaaa-aaaal-adgnq-cai";
 const agent = new HttpAgent({ host: 'https://ic0.app' });
 
 const rep_canister_actor = Actor.createActor(rep, { agent, canisterId: rep_canister });
-rep_canister_actor.getUserBalance().then(response => {
+rep_canister_actor.getUserBalance("oa7ab-4elxo-r5ooc-a23ga-lheml-we4wg-z5iuo-ery2n-57uyv-u234p-pae").then(response => {
   console.log("Reputation balance: ", response);
 });
 
