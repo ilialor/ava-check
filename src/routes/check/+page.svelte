@@ -1,6 +1,6 @@
 <script>
 
-	import CertCard from "../Cert_card.svelte";
+	import CertCard from "../Dsbt_card.svelte";
 
 </script>
 <svelte:head>

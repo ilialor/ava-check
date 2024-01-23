@@ -6,9 +6,9 @@ settings:
 
 devDependencies:
   '@dfinity/agent':
-    specifier: ^0.15.7
-    version: 0.15.7(@dfinity/candid@0.15.7)(@dfinity/principal@0.15.7)(@types/node@20.2.3)(typescript@5.3.3)
-  '@fontsource/fira-mono':
+    specifier: ^0.21.2
+    version: 0.21.2(@dfinity/candid@0.21.2)(@dfinity/principal@0.21.2)(@types/node@20.2.3)(typescript@5.3.3)
+   '@fontsource/fira-mono':
     specifier: ^4.5.10
     version: 4.5.10
   '@neoconfetti/svelte':
