@@ -175,7 +175,7 @@
 	}
 	.certificate__list-item-text {
 		display: inline-block;
-		min-width: 160px;
+		min-width: 100px;
 		color: #fff;
 		font-family: 'Red Hat Text';
 		font-size: 0.8rem;
@@ -183,6 +183,9 @@
 		font-weight: 400;
 		line-height: 19px;
 		border-bottom: 1px dashed #fff;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 	.certificate__list-item-question {
 		position: absolute;
