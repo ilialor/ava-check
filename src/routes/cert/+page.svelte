@@ -24,12 +24,13 @@
 	 */
 	let certs = [];
 	let principal = '';
+	let cert = certs[0];
 
 	principalId.subscribe((value) => {
 		principal = value;
 		if (principal) {
 			getCert(principal).then((certs) => {
-				console.log(certs);
+				console.log("Cert: ", certs);
 			});
 		}
 	});
@@ -60,7 +61,7 @@
 <div class="text-column">
 	<h1>Your certificate:</h1>
 
-	<CertCard cert={certs} />
+	<CertCard {cert} />
 </div>
 
 <style>

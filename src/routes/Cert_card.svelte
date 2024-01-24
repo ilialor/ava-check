@@ -7,76 +7,75 @@
 	import ellipse_top from '$lib/images/ellipse-top.svg';
 	import ellipse_buttom from '$lib/images/ellipse-bottom.svg';
 
-	export let cert = [
-		{
-			owner: '',
-			name: '',
-			publisher: '',
-			tokenId: '',
-			basis: '',
-			date: '',
-			reputation: {
-				category: '',
-				value: ''
-			}
+	export let cert = {
+		owner: 'aaaaa-aa',
+		name: 'John',
+		publisher: 'aaaaa-aa',
+		tokenId: '42',
+		basis: 'Basic Motoko',
+		date: '2024-01-01',
+		reputation: {
+			category: 'ava',
+			value: '10'
 		}
-	];
+	};
 
-	$: badgeReceipt = cert[0];
+	let badgeReceipt = cert;
+	let ava = 'https://ava.capetown/en';
 </script>
 
 <section>
-	{#if badgeReceipt}
-		<div class="certificate">
-			<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>
+	<!-- {#if badgeReceipt} -->
+	<div class="certificate">
+		<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>
 
-			<ul class="certificate__list">
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Name</span>
-					<span class="certificate__list-item-text">{badgeReceipt.owner}</span>
-				</li>
+		<ul class="certificate__list">
+			<li class="certificate__list-item">
+				<span class="certificate__list-item-title">Name</span>
+				<span class="certificate__list-item-text">{badgeReceipt.owner}</span>
+			</li>
 
-				<!-- Example: Rendering course information. You might need to adjust this based on actual data structure -->
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Course</span>
-					<span class="certificate__list-item-text">{badgeReceipt.basis}</span>
-				</li>
+			<!-- Example: Rendering course information. You might need to adjust this based on actual data structure -->
+			<li class="certificate__list-item">
+				<span class="certificate__list-item-title">Course</span>
+				<span class="certificate__list-item-text">{badgeReceipt.basis}</span>
+			</li>
 
-				<!-- Publisher and other static information can be retained as is -->
+			<!-- Publisher and other static information can be retained as is -->
 
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Reputation</span>
-					<span class="certificate__list-item-text">{badgeReceipt.reputation.value}</span>
-				</li>
+			<li class="certificate__list-item">
+				<span class="certificate__list-item-title">Reputation</span>
+				<span class="certificate__list-item-text">{badgeReceipt.reputation.value}</span>
+			</li>
 
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Category </span>
-					<span class="certificate__list-item-text">{badgeReceipt.reputation.category}</span>
-				</li>
+			<li class="certificate__list-item">
+				<span class="certificate__list-item-title">Category </span>
+				<span class="certificate__list-item-text">{badgeReceipt.reputation.category}</span>
+			</li>
 
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Date</span>
-					<span class="certificate__list-item-text">{badgeReceipt.date}</span>
-				</li>
-			</ul>
+			<li class="certificate__list-item">
+				<span class="certificate__list-item-title">Date</span>
+				<span class="certificate__list-item-text">{badgeReceipt.date}</span>
+			</li>
+		</ul>
 
-			<div class="certificate__logo">
-				<a href={badgeReceipt.reputation.category}>
-					<img src={logo_agora} alt="Agorapp" />
-				</a>
-			</div>
-
-			<div class="certificate__ava-link">
-				<a href={badgeReceipt.reputation.category}>
-					<img src={logo_ava} alt="ava.capetown" />
-				</a>
-			</div>
-
-			<div class="certificate__ellipses">
-				<!-- Ellipses images remain the same -->
-			</div>
+		<div class="certificate__logo">
+			<a href={ava}>
+				<img src={logo_agora} alt="Agorapp" />
+			</a>
 		</div>
-	{/if}
+
+		<div class="certificate__ava-link">
+			<a href={ava}>
+				<img src={logo_ava} alt="ava.capetown" />
+			</a>
+		</div>
+
+		<div class="certificate__ellipses">
+			<!-- Ellipses images remain the same -->
+		</div>
+	</div>
+	<!-- {/if} -->
 </section>
 
 <style>

@@ -6,7 +6,7 @@ export const principalId = writable('');
 export const isAuthenticated = writable(false);
 
 async function initializeAuthClient() {
-  if (!browser) return; // Добавляем проверку флага здесь
+  if (!browser) return; 
 
   const authClient = await AuthClient.create();
 
@@ -18,10 +18,10 @@ async function initializeAuthClient() {
 }
 
 export async function loginII() {
-  if (!browser) return; // Добавляем проверку флага и здесь
+  if (!browser) return; 
 
   const authClient = await AuthClient.create();
-  const iiUrl = 'https://identity.ic0.app'; // URL of the Internet Identity provider
+  const iiUrl = 'https://identity.ic0.app'; 
 
   await authClient.login({
     identityProvider: iiUrl,
