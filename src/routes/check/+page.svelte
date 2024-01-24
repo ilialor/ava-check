@@ -39,10 +39,10 @@
 	<h1>aVa Check</h1>
 	{#if loggedIn}
 		<div>
-			Привет, {principal}!
+			Hi, {principal}!
 			<p />
 			{#if userBalance !== ''}
-				<p> Ваш баланс: {userBalance}</p>
+				<p> Your Reputation: {userBalance}</p>
 				
 			{/if}
 			<p />

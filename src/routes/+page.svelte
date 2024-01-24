@@ -1,12 +1,11 @@
 <script>
-	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>aVa Check Home</title>
+	<meta name="description" content="aVa Reputation Demo app" />
 </svelte:head>
 
 <section>
@@ -18,14 +17,16 @@
 			</picture>
 		</span>
 
-		to your new<br />SvelteKit app
+		to aVa Reputation Check<br /> app
+		<br />
+		
 	</h1>
 
-	<h2>
+	<!-- <h2>
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
 
-	<Counter />
+	<Counter /> -->
 </section>
 
 <style>
