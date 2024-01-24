@@ -26,7 +26,7 @@
 </script>
 
 <section>
-	{#if badgeReceipt.owner !== 'aaaaa-aa'}
+	{#if cert && cert.owner !== 'aaaaa-aa'}
 		<div class="certificate">
 			<div class="background-image" style="background-image: url({cubes_1});" />
 			<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>

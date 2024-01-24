@@ -24,14 +24,12 @@
 	 */
 	let certs = [];
 	let principal = '';
-	let cert = certs[0];
 
 	principalId.subscribe((value) => {
 		principal = value;
 		if (principal) {
-			getCert(principal).then((certs) => {
-				console.log("Cert: ", certs);
-				cert = certs[certs.sizes-1];
+			getCert(principal).then((newCerts) => {
+				certs = newCerts;
 			});
 		}
 	});
@@ -52,18 +50,16 @@
 
 {#if loggedIn}
 	<div>
-		Привет, {principal}!
+		Hi, {principal}!
 		<button class="out" on:click={handleLogout}> Logout</button>
 	</div>
 {:else}
 	<button on:click={handleLogin}> Login with Internet Identity</button>
 {/if}
 
-<div class="text-column">
-	<h1>Your certificate:</h1>
-
-	<CertCard {cert} />
-</div>
+{#if loggedIn && certs.length > 0}
+	<CertCard cert={certs[certs.length - 1]} />
+{/if}
 
 <style>
 	.out {
