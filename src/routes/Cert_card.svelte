@@ -1,8 +1,9 @@
 <script>
 	import logo_agora from '$lib/images/logo.svg';
 	import logo_ava from '$lib/images/logo.png';
-	import cubes_1 from '$lib/images/cubes-1.png';
-	import cubes_2 from '$lib/images/cubes-2.png';
+	import logo_bg from '$lib/images/logo-bg.svg';
+	import cubes_1 from '$lib/images/cubes1.png';
+	import cubes_2 from '$lib/images/cubes2.png';
 	import question from '$lib/images/question.svg';
 	import ellipse_top from '$lib/images/ellipse-top.svg';
 	import ellipse_buttom from '$lib/images/ellipse-bottom.svg';
@@ -25,64 +26,84 @@
 </script>
 
 <section>
-	<!-- {#if badgeReceipt} -->
-	<div class="certificate">
-		<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>
+	{#if badgeReceipt.owner !== 'aaaaa-aa'}
+		<div class="certificate">
+			<div class="background-image" style="background-image: url({cubes_1});" />
+			<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>
 
-		<ul class="certificate__list">
-			<li class="certificate__list-item">
-				<span class="certificate__list-item-title">Name</span>
-				<span class="certificate__list-item-text">{badgeReceipt.owner}</span>
-			</li>
+			<ul class="certificate__list">
+				<li class="certificate__list-item">
+					<span class="certificate__list-item-title">Name</span>
+					<span class="certificate__list-item-text">{badgeReceipt.owner}</span>
+				</li>
 
-			<!-- Example: Rendering course information. You might need to adjust this based on actual data structure -->
-			<li class="certificate__list-item">
-				<span class="certificate__list-item-title">Course</span>
-				<span class="certificate__list-item-text">{badgeReceipt.basis}</span>
-			</li>
+				<li class="certificate__list-item">
+					<span class="certificate__list-item-title">Course</span>
+					<span class="certificate__list-item-text">{badgeReceipt.basis}</span>
+				</li>
 
-			<!-- Publisher and other static information can be retained as is -->
+				<li class="certificate__list-item">
+					<span class="certificate__list-item-title">Reputation</span>
+					<span class="certificate__list-item-text">{badgeReceipt.reputation.value}</span>
+				</li>
 
-			<li class="certificate__list-item">
-				<span class="certificate__list-item-title">Reputation</span>
-				<span class="certificate__list-item-text">{badgeReceipt.reputation.value}</span>
-			</li>
+				<li class="certificate__list-item">
+					<span class="certificate__list-item-title">Category </span>
+					<span class="certificate__list-item-text">{badgeReceipt.reputation.category}</span>
 
-			<li class="certificate__list-item">
-				<span class="certificate__list-item-title">Category </span>
-				<span class="certificate__list-item-text">{badgeReceipt.reputation.category}</span>
-			</li>
+					<div class="certificate__list-item-question" style="background-image: url({question});">
+						<div class="certificate__list-item-question-icon" />
+						<ul class="certificate__list-item-question-info">
+							<li class="certificate__list-item-question-info-item">1. Natural sciences</li>
+							<li class="certificate__list-item-question-info-item">
+								2. Computer and information sciences
+							</li>
+							<li class="certificate__list-item-question-info-item">3. Programming languages</li>
+							<li class="certificate__list-item-question-info-item">4. Motoko</li>
+						</ul>
+					</div>
+				</li>
 
-			<li class="certificate__list-item">
-				<span class="certificate__list-item-title">Date</span>
-				<span class="certificate__list-item-text">{badgeReceipt.date}</span>
-			</li>
-		</ul>
+				<li class="certificate__list-item">
+					<span class="certificate__list-item-title">Date</span>
+					<span class="certificate__list-item-text">{badgeReceipt.date}</span>
+				</li>
+			</ul>
 
-		<div class="certificate__logo">
-			<a href={ava}>
-				<img src={logo_agora} alt="Agorapp" />
-			</a>
+			<div class="certificate__logo">
+				<a href={ava}>
+					<img src={logo_agora} alt="Agorapp" />
+					<img class="certificate__logo-bg" src={logo_bg} alt="bg" />
+				</a>
+			</div>
+
+			<div class="certificate__ava-link">
+				<a href={ava}>
+					<img src={logo_ava} alt="ava.capetown" />
+				</a>
+			</div>
+
+			<div class="certificate__ellipses">
+				<img
+					class="certificate__ellipses-item certificate__ellipses-item_top"
+					src={ellipse_top}
+					alt="ellipse"
+				/>
+				<img
+					class="certificate__ellipses-item certificate__ellipses-item_bottom"
+					src={ellipse_buttom}
+					alt="ellipse"
+				/>
+			</div>
 		</div>
-
-		<div class="certificate__ava-link">
-			<a href={ava}>
-				<img src={logo_ava} alt="ava.capetown" />
-			</a>
-		</div>
-
-		<div class="certificate__ellipses">
-			<!-- Ellipses images remain the same -->
-		</div>
-	</div>
-	<!-- {/if} -->
+	{/if}
 </section>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
-	body {
+	/* body {
 		background-color: #2f2e32;
-	}
+	} */
 
 	.certificate {
 		position: relative;
@@ -227,13 +248,13 @@
 		z-index: 2;
 		filter: blur(50px);
 	}
-	.certificate__logo-logo {
+	/* .certificate__logo-logo {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		z-index: 5;
 		transform: translateX(-50%) translateY(-50%);
-	}
+	} */
 	.certificate__ava-link {
 		position: absolute;
 		left: 20px;

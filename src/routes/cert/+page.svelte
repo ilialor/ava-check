@@ -31,6 +31,7 @@
 		if (principal) {
 			getCert(principal).then((certs) => {
 				console.log("Cert: ", certs);
+				cert = certs[certs.sizes-1];
 			});
 		}
 	});
@@ -52,7 +53,7 @@
 {#if loggedIn}
 	<div>
 		Привет, {principal}!
-		<button on:click={handleLogout}> Logout</button>
+		<button class="out" on:click={handleLogout}> Logout</button>
 	</div>
 {:else}
 	<button on:click={handleLogin}> Login with Internet Identity</button>
@@ -65,7 +66,7 @@
 </div>
 
 <style>
-	.button {
+	.out {
 		background-color: #4caf50;
 		border: none;
 		color: white;

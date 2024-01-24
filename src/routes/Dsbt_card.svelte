@@ -422,7 +422,7 @@
 
 	/* Form styles */
 
-	.formcard {
+	/* .formcard {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -436,7 +436,6 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		color: var(--color-white);
-		/* overflow: auto; */
 	}
 
 	.form-content {
@@ -514,5 +513,5 @@
 		border: none;
 		color: var(--color-white);
 		padding: 5px 5px;
-	}
+	} */
 </style>
