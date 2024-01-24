@@ -1,49 +1,71 @@
 <script>
-	import { onMount } from 'svelte';
+	import { getCert } from '../canister_calls.js';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
 	import CertCard from '../Cert_card.svelte';
-  
+
 	let loggedIn = false;
-	isAuthenticated.subscribe(value => {
-	  loggedIn = value;
+	isAuthenticated.subscribe((value) => {
+		loggedIn = value;
 	});
-  
+
+	/**
+	 * @typedef {Object} Certificate
+	 * @property {string} owner
+	 * @property {string} name
+	 * @property {string} publisher
+	 * @property {string} tokenId
+	 * @property {string} basis
+	 * @property {string} date
+	 * @property {{ category: string; value: string }} reputation
+	 */
+
+	/**
+	 * @type {Certificate[]}
+	 */
+	let certs = [];
 	let principal = '';
-	principalId.subscribe(value => {
-	  principal = value;
+
+	principalId.subscribe((value) => {
+		principal = value;
+		if (principal) {
+			getCert(principal).then((certs) => {
+				console.log(certs);
+			});
+		}
 	});
-  
+
 	function handleLogin() {
-	  loginII();
+		loginII();
 	}
-  
+
 	function handleLogout() {
-	  logout();
+		logout();
 	}
-  </script>
-  
-  <svelte:head>
+</script>
+
+<svelte:head>
 	<title>Certificate</title>
 	<meta name="description" content="User's certificates" />
-  </svelte:head>
-  
-  {#if loggedIn}
-	<div>
-	  Привет, {principal}!
-	  <button on:click={handleLogout}>Выйти</button>
-	</div>
-  {:else}
-	<button on:click={handleLogin}>Войти через Internet Identity</button>
-  {/if}
-  
-  <div class="text-column">
-	<h1>Your certificate:</h1> 
+</svelte:head>
 
-	<CertCard />
+{#if loggedIn}
+	<div>
+		Привет, {principal}!
+		<button on:click={handleLogout}> Logout</button>
+	</div>
+{:else}
+	<button on:click={handleLogin}> Login with Internet Identity</button>
+{/if}
+
+<div class="text-column">
+	<h1>Your certificate:</h1>
+
+	<CertCard cert={certs} />
 </div>
+
 <style>
 	.button {
-		background-color: #4CAF50;
+		background-color: #4caf50;
 		border: none;
 		color: white;
 		padding: 10px 10px;

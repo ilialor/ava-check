@@ -7,35 +7,27 @@
 	import ellipse_top from '$lib/images/ellipse-top.svg';
 	import ellipse_buttom from '$lib/images/ellipse-bottom.svg';
 
-	const badgeReceipt = {
-		owner: 'Ivone Drake',
-		userId: 2300900923,
-		reputation: {
-			total: 695,
-			specialist: [
-				{
-					code: '1.2.3.4',
-					name: 'Motoko'
-				},
-				{
-					code: '7.2.2.45',
-					name: 'Texas Holdem'
-				}
-			],
-			expert: [
-				{
-					code: '1.2.2.1',
-					name: 'Internet Computer Core'
-				}
-			],
-			evolution: 'https://ava.capetown/user/'
-		}
-	};
+
+	export let cert = [{
+            owner: '',
+            name: '',
+            publisher :'',
+            tokenId: '',
+            basis: '',
+            date: '',
+            reputation: {
+              category: '',
+              value: '',
+            }
+          }]; 
+	
+	let badgeReceipt =  cert[0];
+
 </script>
 
 <section>
 	<div class="certificate">
-		<h2 class="certificate__title">Certificate #<span>{badgeReceipt.userId}</span></h2>
+		<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>
 
 		<ul class="certificate__list">
 			<li class="certificate__list-item">
@@ -47,7 +39,7 @@
 			<li class="certificate__list-item">
 				<span class="certificate__list-item-title">Course</span>
 				<span class="certificate__list-item-text"
-					>Beginner {badgeReceipt.reputation.specialist[0].name}</span
+					>{badgeReceipt.basis}</span
 				>
 			</li>
 
@@ -55,39 +47,29 @@
 
 			<li class="certificate__list-item">
 				<span class="certificate__list-item-title">Reputation</span>
-				<span class="certificate__list-item-text">{badgeReceipt.reputation.total}</span>
+				<span class="certificate__list-item-text">{badgeReceipt.reputation.value}</span>
 			</li>
 
-			<!-- Dynamically render 'specialist' categories -->
-			{#each badgeReceipt.reputation.specialist as specialist}
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Category </span>
-					<span class="certificate__list-item-text">{specialist.code}</span>
-				</li>
-			{/each}
+			<li class="certificate__list-item">
+				<span class="certificate__list-item-title">Category </span>
+				<span class="certificate__list-item-text">{badgeReceipt.reputation.category}</span>
+			</li>
 
-			<!-- Dynamically render 'expert' categories -->
-			<!-- {#each badgeReceipt.reputation.expert as expert}
-				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Expert in {expert.name}</span>
-					<span class="certificate__list-item-text">Code: {expert.code}</span>
-				</li>
-			{/each} -->
 
 			<li class="certificate__list-item">
 				<span class="certificate__list-item-title">Date</span>
-				<span class="certificate__list-item-text">23.01.2024</span>
+				<span class="certificate__list-item-text">{badgeReceipt.date}</span>
 			</li>
 		</ul>
 
 		<div class="certificate__logo">
-			<a href={badgeReceipt.reputation.evolution}>
+			<a href={badgeReceipt.reputation.category}>
 				<img src={logo_agora} alt="Agorapp" />
 			</a>
 		</div>
 
 		<div class="certificate__ava-link">
-			<a href={badgeReceipt.reputation.evolution}>
+			<a href={badgeReceipt.reputation.category}>
 				<img src={logo_ava} alt="ava.capetown" />
 			</a>
 		</div>

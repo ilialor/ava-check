@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
-	import { getBalance } from './rep.js';
+	import { getBalance } from '../canister_calls.js';
 	import CertCard from '../Dsbt_card.svelte';
 
 	let loggedIn = false;
