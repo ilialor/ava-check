@@ -84,7 +84,7 @@
 			</div>
 
 			<div class="certificate__ellipses">
-				<img
+				<!-- <img
 					class="certificate__ellipses-item certificate__ellipses-item_top"
 					src={ellipse_top}
 					alt="ellipse"
@@ -93,7 +93,7 @@
 					class="certificate__ellipses-item certificate__ellipses-item_bottom"
 					src={ellipse_buttom}
 					alt="ellipse"
-				/>
+				/> -->
 			</div>
 		</div>
 	{/if}
@@ -277,7 +277,7 @@
 		height: auto;
 		filter: drop-shadow(0px 5.292px 1.764px rgba(0, 0, 0, 0.25));
 	}
-	.certificate__ellipses-item {
+	/* .certificate__ellipses-item {
 		position: absolute;
 		z-index: 1;
 		filter: blur(75px);
@@ -289,5 +289,5 @@
 	.certificate__ellipses-item_bottom {
 		left: 150px;
 		bottom: -56px;
-	}
+	} */
 </style>
