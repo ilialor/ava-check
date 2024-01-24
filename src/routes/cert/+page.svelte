@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
 	import CertCard from '../Cert_card.svelte';
   
@@ -40,3 +41,14 @@
 
 	<CertCard />
 </div>
+<style>
+	.button {
+		background-color: #4CAF50;
+		border: none;
+		color: white;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin-left: 1rem;
+	}
+</style>

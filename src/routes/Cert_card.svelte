@@ -1,6 +1,11 @@
 <script>
 	import logo_agora from '$lib/images/logo.svg';
 	import logo_ava from '$lib/images/logo.png';
+	import cubes_1 from '$lib/images/cubes-1.png';
+	import cubes_2 from '$lib/images/cubes-2.png';
+	import question from '$lib/images/question.svg';
+	import ellipse_top from '$lib/images/ellipse-top.svg';
+	import ellipse_buttom from '$lib/images/ellipse-bottom.svg';
 
 	const badgeReceipt = {
 		owner: 'Ivone Drake',
@@ -56,22 +61,22 @@
 			<!-- Dynamically render 'specialist' categories -->
 			{#each badgeReceipt.reputation.specialist as specialist}
 				<li class="certificate__list-item">
-					<span class="certificate__list-item-title">Specialist in {specialist.name}</span>
-					<span class="certificate__list-item-text">Code: {specialist.code}</span>
+					<span class="certificate__list-item-title">Category </span>
+					<span class="certificate__list-item-text">{specialist.code}</span>
 				</li>
 			{/each}
 
 			<!-- Dynamically render 'expert' categories -->
-			{#each badgeReceipt.reputation.expert as expert}
+			<!-- {#each badgeReceipt.reputation.expert as expert}
 				<li class="certificate__list-item">
 					<span class="certificate__list-item-title">Expert in {expert.name}</span>
 					<span class="certificate__list-item-text">Code: {expert.code}</span>
 				</li>
-			{/each}
+			{/each} -->
 
 			<li class="certificate__list-item">
 				<span class="certificate__list-item-title">Date</span>
-				<span class="certificate__list-item-text">Dynamic Date Here</span>
+				<span class="certificate__list-item-text">23.01.2024</span>
 			</li>
 		</ul>
 
@@ -118,7 +123,7 @@
 		width: 126px;
 		height: 81px;
 		transform: rotate(10.365deg);
-		background: url(../assets/cubes-1.png) center no-repeat;
+		background: url({cubes_1}) center no-repeat;
 	}
 	.certificate::after {
 		content: '';
@@ -128,7 +133,7 @@
 		width: 118px;
 		height: 76px;
 		transform: rotate(-3deg);
-		background: url(../assets/cubes-2.png) top left no-repeat;
+		background: url({cubes_2}) top left no-repeat;
 	}
 	.certificate__title {
 		margin: 0 0 33px;
@@ -187,7 +192,7 @@
 	.certificate__list-item-question-icon {
 		width: 15px;
 		height: 15px;
-		background: url(../assets/question.svg) center no-repeat;
+		background: url({question}) center no-repeat;
 		background-size: 13px;
 		cursor: pointer;
 	}

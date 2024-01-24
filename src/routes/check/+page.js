@@ -14,8 +14,7 @@ rep_canister_actor.getUserBalance(Principal.fromText("oa7ab-4elxo-r5ooc-a23ga-lh
 
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement
-// const actor = doctoken;
-// const res = actor.getDocumentById(38);
+export const _rep_canister_actor = rep_canister_actor;
 export const csr = dev;
 
 // since there's no dynamic data here, we can prerender
