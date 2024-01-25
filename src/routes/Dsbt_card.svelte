@@ -11,41 +11,22 @@
 	import rep2 from '$lib/images/rep2.svg';
 
 	export let badgeReceipt = {
-		owner: 'Ivone Drake',
-		userId: 2300900923,
-		reputation: {
-			total: 695,
-			specialist: [
-				{
-					code: '1.2.3.4',
-					name: 'Motoko'
-				},
-				{
-					code: '7.2.2.45',
-					name: 'Texas Holdem'
-				}
-			],
-			expert: [
-				{
-					code: '1.2.2.1',
-					name: 'Internet Computer Core'
-				}
-			],
-			evolution: 'https://check.ava.capetown'
-		}
+		user: 'Ivone Drake',
+		total_reputation: 695,
+		ava_link: 'https://ava.capetown',
+		ic_link: 'https://internetcomputer.org',
+		specialist: [
+			['1.2.3.4', 'Motoko'],
+			['7.2.2.45', 'Texas Holdem']
+		],
+		expert: [['1.2.2.1', 'Internet Computer Core']],
+		history_link: 'https://check.ava.capetown'
 	};
 
 	let website = 'https://ava.capetown/en';
 	let icp_link = 'https://internetcomputer.org';
 
 	let evolution_link = 'https://check.ava.capetown';
-
-	// let inputOwner = '';
-	// let inputUserId = 0;
-	// let inputTotalReputation = 0;
-	// let specialists = [{ code: '', name: '' }];
-	// let experts = [{ code: '', name: '' }];
-
 </script>
 
 <main>
@@ -61,7 +42,7 @@
 			<div class="card-reputation">
 				<div style="background-image: url({rep2})" class="reputation-icon" />
 				<div class="reputation-value">
-					{badgeReceipt.reputation.total}
+					{badgeReceipt.total_reputation}
 				</div>
 			</div>
 		</div>
@@ -69,16 +50,16 @@
 			<div class="card-info">
 				<div class="info-item">
 					<span class="info-label">Name:</span>
-					<span class="info-value" id="name">{badgeReceipt.owner}</span>
+					<span class="info-value" id="name">{badgeReceipt.user}</span>
 				</div>
 				<div class="info-item">
 					<span class="info-label">Specialist:</span>
 					<span
 						class="info-value"
 						id="specialist"
-						title={badgeReceipt.reputation.specialist.map((s) => s.name).join('; ')}
+						title={badgeReceipt.specialist.map((s) => s[1]).join('; ')}
 					>
-						{badgeReceipt.reputation.specialist.map((s) => s.code).join('; ')}
+						{badgeReceipt.specialist.map((s) => s[0]).join('; ')}
 						<a href={evolution_link} target="_blank" class="card-logo-link"
 							><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
 						></span
@@ -89,8 +70,8 @@
 					<span
 						class="info-value"
 						id="expert"
-						title={badgeReceipt.reputation.expert.map((s) => s.name).join('; ')}
-						>{badgeReceipt.reputation.expert.map((s) => s.code).join('; ')}<a
+						title={badgeReceipt.expert.map((s) => s[1]).join('; ')}
+						>{badgeReceipt.expert.map((s) => s[0]).join('; ')}<a
 							href={evolution_link}
 							target="_blank"
 							class="card-logo-link"
@@ -111,7 +92,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <Card /> -->
 </main>
 
 <style>

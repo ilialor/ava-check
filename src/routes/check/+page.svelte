@@ -8,28 +8,16 @@
 	let principal = '';
 	let userBalance = '';
 	let badgeReceipt = {
-		owner: 'Ivone Drake',
-		userId: 2300900923,
-		reputation: {
-			total: 695,
-			specialist: [
-				{
-					code: '1.2.3.4',
-					name: 'Motoko'
-				},
-				{
-					code: '7.2.2.45',
-					name: 'Texas Holdem'
-				}
-			],
-			expert: [
-				{
-					code: '1.2.2.1',
-					name: 'Internet Computer Core'
-				}
-			],
-			evolution: 'https://ava.capetown/user/'
-		}
+		user: 'Ivone Drake',
+		total_reputation: 695,
+		ava_link: 'https://ava.capetown',
+		ic_link: 'https://internetcomputer.org',
+		specialist: [
+			['1.2.3.4', 'Motoko'],
+			['7.2.2.45', 'Texas Holdem']
+		],
+		expert: [['1.2.2.1', 'Internet Computer Core']],
+		history_link: 'https://check.ava.capetown'
 	};
 
 	isAuthenticated.subscribe((value) => {
@@ -84,7 +72,7 @@
 	<p />
 
 	<p>
-		{#if badgeReceipt.owner !== 'Ivone Drake'}
+		{#if badgeReceipt.user !== 'Ivone Drake'}
 			<CertCard {badgeReceipt} />
 		{/if}
 	</p>
