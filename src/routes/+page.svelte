@@ -22,11 +22,10 @@
 		
 	</h1>
 
-	<!-- <h2>
-		try editing <strong>src/routes/+page.svelte</strong>
+	<h2>
+		Check you <a href="/cert">Certificates</a> <br /> and <a href="/check">aVa Soulbound Reputation Token</a>aVa Soulbound Reputation Token.
 	</h2>
 
-	<Counter /> -->
 </section>
 
 <style>
