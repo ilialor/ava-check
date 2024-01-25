@@ -138,8 +138,8 @@
 	.card {
 		display: flex;
 		flex-direction: column;
-		width: 21.875rem;
-		height: 22.25rem;
+		width: 26rem;
+		height: 25rem;
 		border-radius: 0.625rem;
 		border: 1px solid #fff;
 		background: linear-gradient(161deg, #00155d 8.46%, #013440 91.91%);
@@ -265,5 +265,12 @@
 		flex-shrink: 0;
 		margin-left: 35%;
 		margin-top: 15%;
+	}
+
+	#name {
+		max-width: 100px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 </style>
