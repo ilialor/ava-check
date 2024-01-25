@@ -175,7 +175,8 @@
 	}
 	.certificate__list-item-text {
 		display: inline-block;
-		max-width: 100px;
+		max-width: 160px;
+		min-width: 120px;
 		color: #fff;
 		font-family: 'Red Hat Text';
 		font-size: 0.8rem;
