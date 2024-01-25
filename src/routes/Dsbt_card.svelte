@@ -31,182 +31,24 @@
 					name: 'Internet Computer Core'
 				}
 			],
-			evolution: 'https://ava.capetown/user/'
+			evolution: 'https://check.ava.capetown'
 		}
 	};
 
-	// import Card from "./Card.svelte";
-
-	// function updateBadge(event) {
-	//     event.preventDefault();
-	//     badgeReceipt.owner = inputOwner;
-	//     badgeReceipt.userId = Number(inputUserId);
-	//     badgeReceipt.reputation.total = Number(inputTotalReputation);
-	//     badgeReceipt.reputation.specialist = specialists;
-	//     badgeReceipt.reputation.expert = experts;
-	// }
-
-	// Demo data
 	let website = 'https://ava.capetown/en';
 	let icp_link = 'https://internetcomputer.org';
-	// let badgeReceipt = {
-	// 	owner: 'Ivone Drake',
-	// 	userId: 2300900923,
-	// 	reputation: {
-	// 		total: 695,
-	// 		specialist: [
-	// 			{
-	// 				code: '1.2.3.4',
-	// 				name: 'Motoko'
-	// 			},
-	// 			{
-	// 				code: '7.2.2.45',
-	// 				name: 'Texas Holdem'
-	// 			}
-	// 		],
-	// 		expert: [
-	// 			{
-	// 				code: '1.2.2.1',
-	// 				name: 'Internet Computer Core'
-	// 			}
-	// 		],
-	// 		evolution: 'https://ava.capetown/user/'
-	// 	}
-	// };
 
-	let evolution_link = badgeReceipt.reputation.evolution + badgeReceipt.userId?.toString() ?? '';
+	let evolution_link = 'https://check.ava.capetown';
 
-	let inputOwner = '';
-	let inputUserId = 0;
-	let inputTotalReputation = 0;
-	let specialists = [{ code: '', name: '' }];
-	let experts = [{ code: '', name: '' }];
+	// let inputOwner = '';
+	// let inputUserId = 0;
+	// let inputTotalReputation = 0;
+	// let specialists = [{ code: '', name: '' }];
+	// let experts = [{ code: '', name: '' }];
 
-	function addSpecialist() {
-		specialists = [...specialists, { code: '', name: '' }];
-	}
-
-	// function removeSpecialist(index) {
-	//     specialists = specialists.filter((_, i) => i !== index);
-	// }
-
-	// function addExpert() {
-	//     experts = [...experts, { code: "", name: "" }];
-	// }
-
-	// function removeExpert(index) {
-	//     experts = experts.filter((_, i) => i !== index);
-	// }
-	// let specialistIdCounter = 0;
-	// let expertIdCounter = 0;
 </script>
 
 <main>
-	<!-- <h1>Component Demo</h1> -->
-
-	<!-- Badge input form -->
-	<!-- <div class="formcard">
-        <form on:submit|preventDefault={updateBadge} class="form-content">
-            <div class="form-item">
-                <label for="owner" class="info-label">Owner Name:</label>
-                <input
-                    id="owner"
-                    type="text"
-                    bind:value={inputOwner}
-                    class="info-value"
-                    placeholder="Owner Name"
-                />
-            </div>
-            <div class="form-item">
-                <label for="userId" class="info-label">User ID:</label>
-                <input
-                    id="userId"
-                    type="number"
-                    bind:value={inputUserId}
-                    class="info-value"
-                    placeholder="User ID"
-                />
-            </div>
-            <div class="form-item">
-                <label for="reputation" class="info-label"
-                    >Total Reputation:</label
-                >
-                <input
-                    id="reputation"
-                    bind:value={inputTotalReputation}
-                    class="info-value"
-                    placeholder="Total Reputation"
-                />
-            </div>
-
-            <div class="dynamic-fields">
-                {#each specialists as specialist, index}
-                    <div class="dynamic-field">
-                        <label
-                            class="form-label"
-                            for={`specialist-code-${index}`}>Code:</label
-                        >
-                        <input
-                            class="form-input"
-                            id={`specialist-code-${index}`}
-                            bind:value={specialist.code}
-                            placeholder="1.1.1.1"
-                        />
-
-                        <label
-                            class="form-label-name"
-                            for={`specialist-name-${index}`}>Name:</label
-                        >
-                        <input
-                            class="form-input-name"
-                            id={`specialist-name-${index}`}
-                            bind:value={specialist.name}
-                            placeholder="aVa"
-                        />
-
-                        <button on:click={() => removeSpecialist(index)}
-                            >Remove</button
-                        >
-                    </div>
-                {/each}
-                <button on:click={addSpecialist}>Add Specialist</button>
-            </div>
-
-            <div class="dynamic-fields">
-                {#each experts as expert, index}
-                    <div class="dynamic-field">
-                        <label class="form-label" for={`expert-code-${index}`}
-                            >Code:</label
-                        >
-                        <input
-                            class="form-input"
-                            id={`expert-code-${index}`}
-                            bind:value={expert.code}
-                            placeholder="1.1.1.1"
-                        />
-
-                        <label class="form-label-name" for={`expert-name-${index}`}
-                            >Name:</label
-                        >
-                        <input
-                            class="form-input-name"
-                            id={`expert-name-${index}`}
-                            bind:value={expert.name}
-                            placeholder="aVa"
-                        />
-
-                        <button on:click={() => removeExpert(index)}
-                            >Remove</button
-                        >
-                    </div>
-                {/each}
-                <button on:click={addExpert}>Add Expert</button>
-            </div>
-
-            <button type="submit" class="form-submit">Update Badge</button>
-        </form>
-    </div> -->
-
 	<div style="background-image: url({card_background})" class="card">
 		<div class="card-header">
 			<a href={website} target="_blank" class="card-logo-link">
@@ -444,99 +286,4 @@
 		margin-left: 35%;
 		margin-top: 15%;
 	}
-
-	/* Form styles */
-
-	/* .formcard {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		max-width: 750px;
-		height: 100%;
-		max-height: 22.25rem;
-		border-radius: 0.625rem;
-		border: 1px solid #fff;
-		background: linear-gradient(161deg, #00155d 8.46%, #013440 91.91%);
-		background-image: url({card_background});
-		background-size: cover;
-		background-repeat: no-repeat;
-		color: var(--color-white);
-	}
-
-	.form-content {
-		font-family: 'Montserrat', 'Goldman', sans-serif;
-		padding: 16px;
-		text-align: left;
-		font-size: var(--font-size-base);
-		color: var(--color-white);
-		overflow-y: auto;
-		max-height: 500px;
-		width: 100%;
-	}
-
-	.form-label {
-		font-size: var(--font-size-less);
-		width: 120px;
-		text-align: right;
-		color: #07d1fd;
-		margin-right: 1rem;
-		flex-shrink: 0;
-	}
-
-	.form-label-name {
-		width: 50px;
-		color: #07d1fd;
-	}
-
-	.form-input {
-		width: 150px;
-	}
-
-	.form-item {
-		display: flex;
-		align-items: center;
-		margin-bottom: 12px;
-	}
-
-	.form-input-name {
-		width: 3rem;
-	}
-
-	.form-submit {
-		background: transparent;
-		border: 1px solid #07d1fd;
-		border-radius: 4px;
-		color: var(--color-white);
-		padding: 8px;
-		width: 80%;
-		margin-left: 1rem;
-		cursor: pointer;
-		margin-top: 12px;
-		background-color: var(--primary-color);
-		border: none;
-		padding: 10px 10px;
-		font-size: var(--font-size-base);
-	}
-
-	.dynamic-field {
-		display: flex;
-		align-items: center;
-		margin-bottom: 10px;
-	}
-
-	.dynamic-field input {
-		margin-right: 10px;
-	}
-
-	.dynamic-field button {
-		margin-left: 10px;
-	}
-
-	button {
-		border-radius: 4px;
-		background-color: var(--primary-color);
-		border: none;
-		color: var(--color-white);
-		padding: 5px 5px;
-	} */
 </style>

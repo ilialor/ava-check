@@ -23,7 +23,7 @@
 	</h1>
 
 	<h2>
-		Check you <a href="/cert">Certificates</a> <br /> and <a href="/check">aVa Soulbound Reputation Token</a>aVa Soulbound Reputation Token.
+		Check you <a href="/cert">Certificates</a> <br /> <br /> <a href="/check">aVa Soulbound Reputation Token</a>.
 	</h2>
 
 </section>
@@ -56,4 +56,15 @@
 		top: 0;
 		display: block;
 	}
+
+	h2 {
+		max-width: 300px;
+		margin: 0 auto;
+		text-align: center;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		font-size: 1.2em;
+		
+	}
+
 </style>
