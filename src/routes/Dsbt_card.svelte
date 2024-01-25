@@ -10,21 +10,7 @@
 
 	import rep2 from '$lib/images/rep2.svg';
 
-	// import Card from "./Card.svelte";
-
-	// function updateBadge(event) {
-	//     event.preventDefault();
-	//     badgeReceipt.owner = inputOwner;
-	//     badgeReceipt.userId = Number(inputUserId);
-	//     badgeReceipt.reputation.total = Number(inputTotalReputation);
-	//     badgeReceipt.reputation.specialist = specialists;
-	//     badgeReceipt.reputation.expert = experts;
-	// }
-
-	// Demo data
-	let website = 'https://ava.capetown/en';
-	let icp_link = 'https://internetcomputer.org';
-	let badgeReceipt = {
+	export let badgeReceipt = {
 		owner: 'Ivone Drake',
 		userId: 2300900923,
 		reputation: {
@@ -48,6 +34,45 @@
 			evolution: 'https://ava.capetown/user/'
 		}
 	};
+
+	// import Card from "./Card.svelte";
+
+	// function updateBadge(event) {
+	//     event.preventDefault();
+	//     badgeReceipt.owner = inputOwner;
+	//     badgeReceipt.userId = Number(inputUserId);
+	//     badgeReceipt.reputation.total = Number(inputTotalReputation);
+	//     badgeReceipt.reputation.specialist = specialists;
+	//     badgeReceipt.reputation.expert = experts;
+	// }
+
+	// Demo data
+	let website = 'https://ava.capetown/en';
+	let icp_link = 'https://internetcomputer.org';
+	// let badgeReceipt = {
+	// 	owner: 'Ivone Drake',
+	// 	userId: 2300900923,
+	// 	reputation: {
+	// 		total: 695,
+	// 		specialist: [
+	// 			{
+	// 				code: '1.2.3.4',
+	// 				name: 'Motoko'
+	// 			},
+	// 			{
+	// 				code: '7.2.2.45',
+	// 				name: 'Texas Holdem'
+	// 			}
+	// 		],
+	// 		expert: [
+	// 			{
+	// 				code: '1.2.2.1',
+	// 				name: 'Internet Computer Core'
+	// 			}
+	// 		],
+	// 		evolution: 'https://ava.capetown/user/'
+	// 	}
+	// };
 
 	let evolution_link = badgeReceipt.reputation.evolution + badgeReceipt.userId?.toString() ?? '';
 
