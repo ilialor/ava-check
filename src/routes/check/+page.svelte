@@ -63,7 +63,7 @@
 			<button class="out" on:click={handleLogout}> Logout</button>
 		</div>
 	{:else}
-		<button class="in" on:click={handleLogin}> Login with Internet Identity</button>
+		<button on:click={handleLogin}> Login with Internet Identity</button>
 	{/if}
 	<p>
 		This is a <a href="https:ava.capetown/en">aVa</a> dynamic Soulbound token checking page.
@@ -79,6 +79,9 @@
 </div>
 
 <style>
+	button {
+		max-width: 200px;
+	}
 	.out {
 		background-color: #f19823;
 		border: none;
@@ -87,14 +90,5 @@
 		text-align: center;
 		text-decoration: none;
 		margin-left: 1rem;
-	}
-	.in {
-		background-color: #f19823;
-		border: none;
-		color: white;
-		padding: 10px 10px;
-		text-align: center;
-		text-decoration: none;
-		margin-left: 1rem;
-	}
+	}	
 </style>

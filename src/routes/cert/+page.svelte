@@ -55,7 +55,7 @@
 		<button class="out" on:click={handleLogout}> Logout</button>
 	</div>
 {:else}
-	<button class="in" on:click={handleLogin}> Login with Internet Identity</button>
+	<button on:click={handleLogin}> Login with Internet Identity</button>
 {/if}
 
 {#if loggedIn && certs.length > 0}
@@ -71,15 +71,5 @@
 		text-align: center;
 		text-decoration: none;
 		margin-left: 1rem;
-	}
-	.in {
-		max-width: 7rem;
-		background-color: #f19823;
-		border: none;
-		color: white;
-		padding: 10px 10px;
-		text-align: center;
-		text-decoration: none;
-		margin-left: 1rem;
-	}
+	}	
 </style>
