@@ -32,11 +32,11 @@
 
 <div class='back' style='background-image=url{back}'>
 	<!-- <img class="back" src={back} alt="background image" /> -->
-	<img
+	<!-- <img
       class="internet-computer-icp-logo-1-1-1"
       src={icp_logo}
       alt="background image"
-    />
+    /> -->
 	<svg
 		class="vector"
 		width="37"
@@ -157,7 +157,7 @@
 		</div>
 	</div>
 	<div class="frame-21">
-		<div class="evolution"><a href="check.ava.capetown">Evolution</a></div>
+		<div class="evolution"><a href="http://check.ava.capetown">Evolution</a></div>
 	</div>
 	<div class="value-rep">
 		<div class="rep">

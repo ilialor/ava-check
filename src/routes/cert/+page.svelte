@@ -50,7 +50,7 @@
 
 {#if loggedIn}
 	<div>
-		Hi, {principal}! <br />
+		Hi, {principal}! 
 		
 		<button class="out" on:click={handleLogout}> Logout</button>
 	</div>
@@ -70,6 +70,6 @@
 		padding: 10px 10px;
 		text-align: center;
 		text-decoration: none;
-		margin-left: 1rem;
+		margin-left: 2rem;
 	}	
 </style>
