@@ -1,7 +1,7 @@
 <script>
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
 	import { getBalance, getSoulboundBadge } from '../canister_calls.js';
-	import CertCard from '../Dsbt_card.svelte';
+	import DsbtCard from '../dsbt.svelte';
 
 	let loggedIn = false;
 	let principal = '';
@@ -11,12 +11,12 @@
 		total_reputation: 695,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
-		beginner: [['1.2.3.5', 'Rust']],
+		beginner: [{ code: '1.2.3.5', name: 'Rust' }],
 		specialist: [
-			['1.2.3.4', 'Motoko'],
-			['7.2.2.45', 'Texas Holdem']
+			{ code: '1.2.3.4', name: 'Motoko' },
+			{ code: '7.2.2.45', name: 'Texas Holdem' }
 		],
-		expert: [['1.2.2.1', 'Internet Computer Core']],
+		expert: [{ code: '1.2.2.1', name: 'Internet Computer Core' }],
 		history_link: 'https://check.ava.capetown'
 	};
 
@@ -60,10 +60,10 @@
 				<p>Your Reputation: {userBalance}</p>
 			{/if}
 			<p />
-			<button on:click={handleLogout}>Log out</button>
+			<button class="out" on:click={handleLogout}> Logout</button>
 		</div>
 	{:else}
-		<button on:click={handleLogin}> Login with Internet Identity</button>
+		<button class="in" on:click={handleLogin}> Login with Internet Identity</button>
 	{/if}
 	<p>
 		This is a <a href="https:ava.capetown/en">aVa</a> dynamic Soulbound token checking page.
@@ -73,7 +73,28 @@
 
 	<p>
 		{#if badgeReceipt.user !== 'Ivone Drake'}
-			<CertCard {badgeReceipt} />
+			<DsbtCard badge={badgeReceipt} />
 		{/if}
 	</p>
 </div>
+
+<style>
+	.out {
+		background-color: #f19823;
+		border: none;
+		color: white;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin-left: 1rem;
+	}
+	.in {
+		background-color: #f19823;
+		border: none;
+		color: white;
+		padding: 10px 10px;
+		text-align: center;
+		text-decoration: none;
+		margin-left: 1rem;
+	}
+</style>
