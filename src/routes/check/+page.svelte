@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
 	import { getBalance, getSoulboundBadge } from '../canister_calls.js';
 	import CertCard from '../Dsbt_card.svelte';
@@ -12,6 +11,7 @@
 		total_reputation: 695,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
+		beginner: [['1.2.3.5', 'Rust']],
 		specialist: [
 			['1.2.3.4', 'Motoko'],
 			['7.2.2.45', 'Texas Holdem']

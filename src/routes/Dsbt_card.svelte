@@ -15,6 +15,7 @@
 		total_reputation: 695,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
+		beginner: [['1.2.3.5', 'Rust']],
 		specialist: [
 			['1.2.3.4', 'Motoko'],
 			['7.2.2.45', 'Texas Holdem']
@@ -51,6 +52,19 @@
 				<div class="info-item">
 					<span class="info-label">Name:</span>
 					<span class="info-value" id="name">{badgeReceipt.user}</span>
+				</div>
+				<div class="info-item">
+					<span class="info-label">Beginner:</span>
+					<span
+						class="info-value"
+						id="beginner"
+						title={badgeReceipt.beginner.map((s) => s[1]).join('; ')}
+					>
+						{badgeReceipt.beginner.map((s) => s[0]).join('; ')}
+						<a href={evolution_link} target="_blank" class="card-logo-link"
+							><img src={arrow} id="beginner-arrow" alt="arrow" title="Click to see more" /></a
+						></span
+					>
 				</div>
 				<div class="info-item">
 					<span class="info-label">Specialist:</span>
@@ -246,6 +260,7 @@
 		margin-left: 0.5rem;
 	}
 
+	#beginner-arrow,
 	#expert-arrow,
 	#specialist-arrow {
 		vertical-align: middle;
@@ -272,6 +287,5 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-
 	}
 </style>

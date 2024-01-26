@@ -43,6 +43,7 @@ export const idlFactory = ({ IDL }) => {
   });
   const Badge = IDL.Record({
     'history_link' : IDL.Text,
+    'beginner' : IDL.Vec(IDL.Tuple(IDL.Text, IDL.Text)),
     'user' : IDL.Text,
     'specialist' : IDL.Vec(IDL.Tuple(IDL.Text, IDL.Text)),
     'total_reputation' : IDL.Nat,
@@ -104,6 +105,11 @@ export const idlFactory = ({ IDL }) => {
           }),
         ],
         [Result_1],
+        [],
+      ),
+    'getBeginnerCategories' : IDL.Func(
+        [IDL.Principal],
+        [IDL.Vec(IDL.Tuple(Category, IDL.Nat))],
         [],
       ),
     'getCategories' : IDL.Func(

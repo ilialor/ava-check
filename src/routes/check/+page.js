@@ -1,6 +1,5 @@
 import { dev } from '$app/environment';
 import { Actor, HttpAgent } from '@dfinity/agent';
-// import { Principal } from '@dfinity/principal';
 import { idlFactory as rep } from './service_rep.did.js';
 
 const rep_canister = "aoxye-tiaaa-aaaal-adgnq-cai";
