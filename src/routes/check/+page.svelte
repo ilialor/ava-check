@@ -11,12 +11,12 @@
 		total_reputation: 695,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
-		beginner: [{ code: '1.2.3.5', name: 'Rust' }],
+		beginner: [['1.2.3.5', 'Rust']],
 		specialist: [
-			{ code: '1.2.3.4', name: 'Motoko' },
-			{ code: '7.2.2.45', name: 'Texas Holdem' }
+			['1.2.3.4', 'Motoko'],
+			['7.2.2.45', 'Texas Holdem']
 		],
-		expert: [{ code: '1.2.2.1', name: 'Internet Computer Core' }],
+		expert: [['1.2.2.1', 'Internet Computer Core']],
 		history_link: 'https://check.ava.capetown'
 	};
 
@@ -91,5 +91,4 @@
 		text-decoration: none;
 		margin-left: 2rem;
 	}
-
 </style>
