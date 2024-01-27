@@ -1,5 +1,5 @@
 <script>
-	import logo from '$lib/images/logo.png';
+	import logo from '$lib/images/ava.svg';
 	import infinity from '$lib/images/icp-logo.svg';
 	import triangle from '$lib/images/arrow.svg';
   import background from '$lib/images/background.svg';
