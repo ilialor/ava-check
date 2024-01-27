@@ -2,7 +2,7 @@
 	import logo from '$lib/images/ava.svg';
 	import infinity from '$lib/images/icp-logo.svg';
 	import triangle from '$lib/images/arrow.svg';
-  import background from '$lib/images/background.svg';
+	import background from '$lib/images/background.svg';
 	export let badge = {
 		user: 'fu2uo-afawr-hokkm-wohpv-kif7b-6a6ci-sog3h-dsu3c-3lkex-dow4k-nqe',
 
@@ -50,34 +50,25 @@
 
 				<li class="list_item">
 					<div class="key">Beginner:</div>
-					<div class="value">
-						title={badge.beginner.map((s) => s[1]).join('; ')}
+					<span class="value" title={badge.beginner.map((s) => s[1]).join('; ')}>
 						{badge.beginner.map((s) => s[0]).join('; ')}
-						<div class="triangle">
-							<a href={badge.history_link}><img src={triangle} alt="" /></a>
-						</div>
-					</div>
+						<a href={badge.history_link}><img src={triangle} alt="" /></a>
+					</span>
 				</li>
 
 				<li class="list_item">
 					<div class="key">Specialist:</div>
-					<div class="value">
-						title={badge.specialist.map((s) => s[1]).join('; ')}
+					<span class="value" title={badge.specialist.map((s) => s[1]).join('; ')}>
 						{badge.specialist.map((s) => s[0]).join('; ')}
-						<div class="triangle">
-							<a href={badge.history_link}><img src={triangle} alt="" /></a>
-						</div>
-					</div>
+						<a href={badge.history_link}><img src={triangle} alt="" /></a>
+					</span>
 				</li>
 				<li class="list_item">
 					<div class="key">Expert:</div>
-					<div class="value">
-						title={badge.expert.map((s) => s[1]).join('; ')}
+					<span class="value" title={badge.expert.map((s) => s[1]).join('; ')}>
 						{badge.expert.map((s) => s[0]).join('; ')}
-						<div class="triangle">
-							<a href={badge.history_link}><img src={triangle} alt="" /></a>
-						</div>
-					</div>
+						<a href={badge.history_link}><img src={triangle} alt="" /></a>
+					</span>
 				</li>
 			</ul>
 		</div>
