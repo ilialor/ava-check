@@ -52,7 +52,7 @@
 					<div class="key">Beginner:</div>
 					<span class="value" title={badge.beginner.map((s) => s[1]).join('; ')}>
 						{badge.beginner.map((s) => s[0]).join('; ')}
-						<a href={badge.history_link}><img src={triangle} alt="" /></a>
+						<a href={badge.history_link} target="_blank" class="arrow"><img src={triangle} id="beginner-arrow"alt="" /></a>
 					</span>
 				</li>
 
@@ -60,14 +60,14 @@
 					<div class="key">Specialist:</div>
 					<span class="value" title={badge.specialist.map((s) => s[1]).join('; ')}>
 						{badge.specialist.map((s) => s[0]).join('; ')}
-						<a href={badge.history_link}><img src={triangle} alt="" /></a>
+						<a href={badge.history_link} target="_blank" class="arrow"><img src={triangle} id="specialist-arrow" alt=""/></a>
 					</span>
 				</li>
 				<li class="list_item">
 					<div class="key">Expert:</div>
 					<span class="value" title={badge.expert.map((s) => s[1]).join('; ')}>
 						{badge.expert.map((s) => s[0]).join('; ')}
-						<a href={badge.history_link}><img src={triangle} alt="" /></a>
+						<a href={badge.history_link} target="_blank" class="arrow"><img src={triangle} id="expert-arrow" alt="" /></a>
 					</span>
 				</li>
 			</ul>
@@ -155,6 +155,15 @@
 	}
 	.card__list {
 		margin-bottom: 48px;
+	}
+  .arrow {
+    display: inline-block;
+  }
+  #beginner-arrow,
+	#expert-arrow,
+	#specialist-arrow {
+		vertical-align: middle;
+		margin-left: 8px;
 	}
 	ul {
 		padding: 0;

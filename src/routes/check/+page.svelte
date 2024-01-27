@@ -55,19 +55,19 @@
 	{#if loggedIn}
 		<div>
 			Hi, {principal}!
-			<p />
+			<!-- <p />
 			{#if userBalance !== ''}
 				<p>Your Reputation: {userBalance}</p>
 			{/if}
-			<p />
+			<p /> -->
 			<button class="out" on:click={handleLogout}> Logout</button>
 		</div>
 	{:else}
 		<button on:click={handleLogin}> Login with Internet Identity</button>
 	{/if}
-	<p>
+	<!-- <p>
 		This is a <a href="https:ava.capetown/en">aVa</a> dynamic Soulbound token checking page.
-	</p>
+	</p> -->
 
 	<p />
 
