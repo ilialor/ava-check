@@ -1,12 +1,12 @@
 <script>
-	import logo_agora from '$lib/images/logo.svg';
+	import logo_agora from '$lib/images/logo_agora.svg';
 	import logo_ava from '$lib/images/logo.png';
-	import logo_bg from '$lib/images/logo-bg.svg';
-	import cubes_1 from '$lib/images/cubes1.png';
-	import cubes_2 from '$lib/images/cubes2.png';
+	// import logo_bg from '$lib/images/logo-bg.svg';
+	import back from '$lib/images/back.svg';
+	// import cubes_2 from '$lib/images/cubes2.png';
 	import question from '$lib/images/question.svg';
-	import ellipse_top from '$lib/images/ellipse-top.svg';
-	import ellipse_buttom from '$lib/images/ellipse-bottom.svg';
+	// import ellipse_top from '$lib/images/ellipse-top.svg';
+	// import ellipse_buttom from '$lib/images/ellipse-bottom.svg';
 
 	export let cert = {
 		owner: 'aaaaa-aa',
@@ -26,9 +26,8 @@
 </script>
 
 <section>
-	{#if cert && cert.owner !== 'aaaaa-aa'}
-		<div class="certificate">
-			<div class="background-image" style="background-image: url({cubes_1});" />
+	<!-- {#if cert && cert.owner !== 'aaaaa-aa'} -->
+		<div class="certificate" style="background-image: url({back})">
 			<h2 class="certificate__title">Certificate #<span>{badgeReceipt.tokenId}</span></h2>
 
 			<ul class="certificate__list">
@@ -51,7 +50,7 @@
 					<span class="certificate__list-item-title">Category </span>
 					<span class="certificate__list-item-text">{badgeReceipt.reputation.category}</span>
 
-					<div class="certificate__list-item-question" style="background-image: url({question});">
+					<div class="certificate__list-item-question"  style="background-image: url({question});">
 						<div class="certificate__list-item-question-icon" />
 						<ul class="certificate__list-item-question-info">
 							<li class="certificate__list-item-question-info-item">1. Natural sciences</li>
@@ -73,7 +72,7 @@
 			<div class="certificate__logo">
 				<a href={ava}>
 					<img src={logo_agora} alt="Agorapp" />
-					<img class="certificate__logo-bg" src={logo_bg} alt="bg" />
+					<!-- <img class="certificate__logo-bg" src={logo_bg} alt="bg" /> -->
 				</a>
 			</div>
 
@@ -83,20 +82,8 @@
 				</a>
 			</div>
 
-			<div class="certificate__ellipses">
-				<!-- <img
-					class="certificate__ellipses-item certificate__ellipses-item_top"
-					src={ellipse_top}
-					alt="ellipse"
-				/>
-				<img
-					class="certificate__ellipses-item certificate__ellipses-item_bottom"
-					src={ellipse_buttom}
-					alt="ellipse"
-				/> -->
-			</div>
 		</div>
-	{/if}
+	<!-- {/if} -->
 </section>
 
 <style>
@@ -114,9 +101,8 @@
 		box-sizing: border-box;
 		overflow: hidden;
 		border-radius: 10px;
-		background-color: #1c1b1f;
 	}
-	.certificate::before {
+	/* .certificate::before {
 		content: '';
 		position: absolute;
 		top: -20px;
@@ -124,9 +110,8 @@
 		width: 126px;
 		height: 81px;
 		transform: rotate(10.365deg);
-		background: url({cubes_1}) center no-repeat;
-	}
-	.certificate::after {
+	} */
+	/* .certificate::after {
 		content: '';
 		position: absolute;
 		bottom: -6px;
@@ -134,8 +119,7 @@
 		width: 118px;
 		height: 76px;
 		transform: rotate(-3deg);
-		background: url({cubes_2}) top left no-repeat;
-	}
+	} */
 	.certificate__title {
 		margin: 0 0 33px;
 		color: #fff;
@@ -197,7 +181,6 @@
 	.certificate__list-item-question-icon {
 		width: 15px;
 		height: 15px;
-		background: url({question}) center no-repeat;
 		background-size: 13px;
 		cursor: pointer;
 	}
@@ -242,16 +225,16 @@
 	.certificate__list-item-question:hover .certificate__list-item-question-info {
 		display: block;
 	}
-	.certificate__logo {
-		position: absolute;
+	/* .certificate__logo { */
+		/* position: absolute;
 		top: 120px;
-		left: 33px;
-	}
-	.certificate__logo-bg {
+		left: 33px; */
+	/* } */
+	/* .certificate__logo-bg {
 		position: relative;
 		z-index: 2;
 		filter: blur(50px);
-	}
+	} */
 	/* .certificate__logo-logo {
 		position: absolute;
 		top: 50%;

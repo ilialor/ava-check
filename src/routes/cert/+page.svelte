@@ -1,7 +1,7 @@
 <script>
 	import { getCert } from '../canister_calls.js';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
-	import CertCard from '../Cert_card.svelte';
+	import CertCard from '../CertCard.svelte';
 
 	let loggedIn = false;
 	isAuthenticated.subscribe((value) => {
