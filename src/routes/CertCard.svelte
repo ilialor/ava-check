@@ -25,7 +25,7 @@
 				<div class="background-frame">
 					<img class="back" src={back} alt="background" />
 				</div>
-				<a href="https://internetcomputer.org"><img class="icp-logo" src={icp_logo} alt="ICP" /></a>
+				<a href="https://internetcomputer.org" target="_blank"><img class="icp-logo" src={icp_logo} alt="ICP" /></a>
 				<img class="agorapp-logo" src={logo_agora} alt="agora logo" />
 				<div class="content-frame">
 					<div class="item-list">
@@ -61,7 +61,7 @@
 					<div class="category-value">{cert.reputation.category}</div>
 					<div class="date-value">{cert.date}</div>
 					<svg
-						class="ph-question"
+						class="ph-question" 
 						width="15"
 						height="15"
 						viewBox="0 0 15 15"
@@ -74,13 +74,22 @@
 							fill-opacity="0.6"
 						/>
 					</svg>
-					<a href="https://check.ava.capetown"><img class="arrow" src={arrow} alt="arrow" /></a>
+					<div class="certificate__list-item-question-icon" />
+						<ul class="certificate__list-item-question-info">
+							<li class="certificate__list-item-question-info-item">1. Natural sciences</li>
+							<li class="certificate__list-item-question-info-item">
+								2. Computer and information sciences
+							</li>
+							<li class="certificate__list-item-question-info-item">3. Programming languages</li>
+							<li class="certificate__list-item-question-info-item">4. Motoko</li>
+						</ul>
+					<a href="https://check.ava.capetown" target="_blank"><img class="arrow" src={arrow} alt="arrow" /></a>
 				</div>
 				<div class="card-title">
 					<div class="card-title-value">{cert.tokenId}</div>
 					<div class="card-title-name">Certificate №</div>
 				</div>
-				<a href="https://ava.capetown/en"><img class="ava-icon-1" src={logo_ava} alt="aVa" /></a>
+				<a href="https://ava.capetown/en" target="_blank"><img class="ava-icon" src={logo_ava} alt="aVa" /></a>
 			</div>
 		</div>
 	{/if}
@@ -375,6 +384,8 @@
 		font-size: 12px;
 		font-weight: 400;
 		position: absolute;
+		width: 116px;
+		height: 21px;
 		left: 90px;
 		top: 40px;
 		display: flex;
@@ -383,6 +394,7 @@
 	}
 	.publisher-value {
 		color: #ffffff;
+		text-align: center;
 		font-family: 'RedHatText', sans-serif;
 		font-size: 12px;
 		font-weight: 400;
@@ -489,7 +501,7 @@
 		align-items: flex-end;
 		justify-content: center;
 	}
-	.ava-icon-1 {
+	.ava-icon {
 		width: 22px;
 		height: 28px;
 		position: absolute;
@@ -497,5 +509,50 @@
 		top: 253px;
 		overflow: hidden;
 		object-fit: cover;
+	}
+
+	.certificate__list-item-question-info {
+		position: absolute;
+		right: -4px;
+		bottom: 30px;
+		display: none;
+		padding: 13px 22px;
+		list-style-type: none;
+		border-radius: 10px;
+		background: radial-gradient(318.85% 112.36% at 11.79% 9.26%, #262842 0%, #24424a 100%);
+	}
+	.certificate__list-item-question-info-item {
+		width: -moz-max-content;
+		width: max-content;
+		color: #fff;
+		font-family: 'Red Hat Text';
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+	}
+	.certificate__list-item-question-info-item:nth-child(2) {
+		padding-left: 8px;
+	}
+	.certificate__list-item-question-info-item:nth-child(3) {
+		padding-left: 16px;
+	}
+	.certificate__list-item-question-info-item:nth-child(4) {
+		padding-left: 24px;
+	}
+	.certificate__list-item-question-info-item:nth-child(5) {
+		padding-left: 32px;
+	}
+	.certificate__list-item-question-info-item:nth-child(6) {
+		padding-left: 40px;
+	}
+	.certificate__list-item-question-info-item:nth-child(7) {
+		padding-left: 48px;
+	}
+	.ph-question:hover {
+		display: block;
+	}
+	.certificate__list-item-question-info {
+		display: block;
 	}
 </style>
