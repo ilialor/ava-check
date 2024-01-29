@@ -19,7 +19,7 @@
 </script>
 
 <section>
-	<!-- {#if cert && cert.owner !== 'aaaaa-aa'} -->
+	{#if cert && cert.owner !== 'aaaaa-aa'}
 	<div class="certificate">
 		<div class="cert-frame">
 			<div class="background-frame">
@@ -98,7 +98,7 @@
 			>
 		</div>
 	</div>
-	<!-- {/if} -->
+	{/if}
 </section>
 
 <style>
