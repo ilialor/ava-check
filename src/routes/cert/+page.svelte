@@ -59,6 +59,10 @@
 {/if}
 
 {#if loggedIn && certs.length > 0}
+{#each certs as cert}
+	<CertCard cert={cert} />
+{/each}
+
 	<CertCard cert={certs[certs.length - 1]} />
 {/if}
 
