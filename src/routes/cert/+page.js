@@ -33,7 +33,7 @@ async function fetchUserDocuments(principalText) {
  * Fetch documents from doctoken canisters for each pair [(CanisterId, DocId)] using getCert with principalText
  * @param {Array<[string, string]>} documentPairs - An array of tuples containing CanisterId and DocId
  * @param {string} principalText - The principal text to pass to getCert
- * @returns {Promise<any>} A promise that resolves to an array of documents
+ * @returns {Promise<Array<any>>} A promise that resolves to an array of documents
  */
 async function fetchDocumentsFromCanisters(documentPairs, principalText) {
     const documents = [];
@@ -47,14 +47,14 @@ async function fetchDocumentsFromCanisters(documentPairs, principalText) {
                 documents.push(...certificates); // Spread the array of certificates into the documents array
             } else {
                 console.error(`Certificates received from canister ${canisterId} are not an array:`, certificates);
-                documents.push(null);
+                return [];
             }
         } catch (error) {
             console.error(`Error fetching document for principal ${principalText} from canister ${canisterId}:`, error);
-            documents.push(null);
+            return [];
         }
-        return documents;
     };
+    return documents;
 }
 
 /**

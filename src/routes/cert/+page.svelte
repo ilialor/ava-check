@@ -59,7 +59,7 @@
 	<button on:click={handleLogin}> Login with Internet Identity</button>
 {/if}
 
-{#if loggedIn && certs.length > 0}
+{#if loggedIn }
 {#each certs as cert}
 	<CertCard cert={cert} />
 {/each}
