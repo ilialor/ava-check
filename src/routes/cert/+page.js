@@ -39,9 +39,9 @@ async function fetchDocumentsFromCanisters(documentPairs, principalText) {
     const documents = [];
     for (const [canisterId, docId] of documentPairs) {
         const doctokenCanister = Actor.createActor(doctokenIdlFactory, { agent, canisterId });
-
+        const principal = Principal.fromText(principalText);
         try {
-            const certificates = await doctokenCanister.userCertificates(principalText);
+            const certificates = await doctokenCanister.userCertificates(principal);
             console.log(`Certificates for principal ${principalText} from canister ${canisterId}:`, certificates);
             if (Array.isArray(certificates)) {
                 documents.push(...certificates); // Spread the array of certificates into the documents array
