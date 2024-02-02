@@ -1,4 +1,5 @@
 <script>
+	import { _getDocuments } from './+page.js';
 	import { getCert } from '../canister_calls.js';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
 	import CertCard from '../CertCard.svelte';
@@ -28,7 +29,7 @@
 	principalId.subscribe((value) => {
 		principal = value;
 		if (principal) {
-			getCert(principal).then((newCerts) => {
+			_getDocuments(principal).then((newCerts) => {
 				certs = newCerts;
 			});
 		}
@@ -63,7 +64,7 @@
 	<CertCard cert={cert} />
 {/each}
 
-	<CertCard cert={certs[certs.length - 1]} />
+	<!-- <CertCard cert={certs[certs.length - 1]} /> -->
 {/if}
 
 <style>
