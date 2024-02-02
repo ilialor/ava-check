@@ -28,6 +28,8 @@
 	let icp_link = 'https://internetcomputer.org';
 
 	let evolution_link = 'https://check.ava.capetown';
+	// @ts-ignore
+	const isEmpty = (arr) => arr.length === 0;
 </script>
 
 <main>
@@ -68,7 +70,21 @@
 				</div>
 				<div class="info-item">
 					<span class="info-label">Specialist:</span>
-					<span
+					{#if isEmpty(badgeReceipt.specialist)}
+						<span class="info-value">Not enough reputation</span>
+					{:else}
+						<span
+							class="info-value"
+							id="specialist"
+							title={badgeReceipt.specialist.map((s) => s[1]).join('; ')}
+						>
+							{badgeReceipt.specialist.map((s) => s[0]).join('; ')}
+							<a href={evolution_link} target="_blank" class="card-logo-link"
+								><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
+							>
+						</span>
+					{/if}
+					<!-- <span
 						class="info-value"
 						id="specialist"
 						title={badgeReceipt.specialist.map((s) => s[1]).join('; ')}
@@ -77,11 +93,27 @@
 						<a href={evolution_link} target="_blank" class="card-logo-link"
 							><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
 						></span
-					>
+					> -->
 				</div>
 				<div class="info-item">
 					<span class="info-label">Expert:</span>
-					<span
+					{#if isEmpty(badgeReceipt.expert)}
+						<span class="info-value">Not enough reputation</span>
+					{:else}
+						<span
+							class="info-value"
+							id="expert"
+							title={badgeReceipt.expert.map((s) => s[1]).join('; ')}
+						>
+							{badgeReceipt.expert.map((s) => s[0]).join('; ')}<a
+								href={evolution_link}
+								target="_blank"
+								class="card-logo-link"
+								><img src={arrow} id="expert-arrow" alt="arrow" title="Click to see more" /></a
+							></span
+						>
+					{/if}
+					<!-- <span
 						class="info-value"
 						id="expert"
 						title={badgeReceipt.expert.map((s) => s[1]).join('; ')}
@@ -91,7 +123,7 @@
 							class="card-logo-link"
 							><img src={arrow} id="expert-arrow" alt="arrow" title="Click to see more" /></a
 						></span
-					>
+					> -->
 				</div>
 			</div>
 			<div class="footer">

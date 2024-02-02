@@ -1,6 +1,6 @@
 import { Principal } from '@dfinity/principal';
 import { _rep_canister_actor } from './check/+page.js';
-import { _doctoken_canister } from './cert/+page.js';
+import { _doctokenCanister, _hubCanister } from './cert/+page.js';
 
 /**
  * Get User Balance from reputation canister
@@ -32,6 +32,36 @@ export async function getSoulboundBadge(principalText) {
  */
 export async function getCert(principalText) {
     const principal = Principal.fromText(principalText);
-    const response = await _doctoken_canister.userCertificates(principal);
+    const response = await _doctokenCanister.userCertificates(principal);
     return response;
 }
+
+/**
+* Get [(CanisterId, DocId)] from hub canister
+* @param {string} principalText
+* @returns {Promise<any>}
+*/
+export async function getUserDocuments(principalText) {
+    const principal = Principal.fromText(principalText);
+    const response = await _hubCanister.getUserDocuments(principal);
+    return response;
+}
+
+// /**
+// * Get [(CanisterId, DocId)] from hub canister
+// * @param {string} principalText
+// * @returns {Promise<any>}
+// */
+// export async function fetchUserDocuments(principalText) {
+//     const principal = Principal.fromText(principalText);
+
+//     try {
+//         const response = await _hubCanister.getUserDocuments(principal);
+//         return response;
+//     } catch (error) {
+//         console.error('Error fetching user documents:', error);
+//         return [];
+//     }
+// }
+
+
