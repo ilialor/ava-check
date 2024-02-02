@@ -59,7 +59,6 @@
 </svelte:head>
 
 <div class="text-column">
-	<!-- <h1>aVa Check</h1> -->
 	{#if loggedIn}
 		<div>
 			Hi, {principal}!
@@ -80,9 +79,9 @@
 	<p />
 
 	<p>
-		<!-- {#if badgeReceipt.user !== 'Ivone Drake'} -->
+		{#if badgeReceipt.user !== 'Ivone Drake'}
 			<DsbtCard badge={badgeReceipt} />
-		<!-- {/if} -->
+		{/if}
 	</p>
 </div>
 
