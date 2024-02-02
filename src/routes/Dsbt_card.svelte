@@ -12,13 +12,11 @@
 
 	export let badgeReceipt = {
 		user: 'Ivone Drake',
-		total_reputation: 695,
+		total_reputation: 690,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
 		beginner: [['1.2.3.5', 'Rust']],
-		specialist: [
-			['1.2.3.4', 'Motoko'],
-			['7.2.2.45', 'Texas Holdem']
+		specialist: [['1.2.3.4', 'Python']
 		],
 		expert: [['1.2.2.1', 'Internet Computer Core']],
 		history_link: 'https://check.ava.capetown'
@@ -28,8 +26,7 @@
 	let icp_link = 'https://internetcomputer.org';
 
 	let evolution_link = 'https://check.ava.capetown';
-	// @ts-ignore
-	const isEmpty = (arr) => arr.length === 0;
+	
 </script>
 
 <main>
@@ -70,9 +67,7 @@
 				</div>
 				<div class="info-item">
 					<span class="info-label">Specialist:</span>
-					{#if isEmpty(badgeReceipt.specialist)}
-						<span class="info-value">Not enough reputation</span>
-					{:else}
+					
 						<span
 							class="info-value"
 							id="specialist"
@@ -83,23 +78,11 @@
 								><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
 							>
 						</span>
-					{/if}
-					<!-- <span
-						class="info-value"
-						id="specialist"
-						title={badgeReceipt.specialist.map((s) => s[1]).join('; ')}
-					>
-						{badgeReceipt.specialist.map((s) => s[0]).join('; ')}
-						<a href={evolution_link} target="_blank" class="card-logo-link"
-							><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
-						></span
-					> -->
+					
 				</div>
 				<div class="info-item">
 					<span class="info-label">Expert:</span>
-					{#if isEmpty(badgeReceipt.expert)}
-						<span class="info-value">Not enough reputation</span>
-					{:else}
+					
 						<span
 							class="info-value"
 							id="expert"
@@ -112,7 +95,7 @@
 								><img src={arrow} id="expert-arrow" alt="arrow" title="Click to see more" /></a
 							></span
 						>
-					{/if}
+					
 					<!-- <span
 						class="info-value"
 						id="expert"

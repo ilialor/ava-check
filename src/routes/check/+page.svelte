@@ -8,17 +8,25 @@
 	let userBalance = '';
 	let badgeReceipt = {
 		user: 'Ivone Drake',
-		total_reputation: 695,
+		total_reputation: 692,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
 		beginner: [['1.2.3.5', 'Rust']],
-		specialist: [
-			['1.2.3.4', 'Motoko'],
-			['7.2.2.45', 'Texas Holdem']
+		specialist: [	
+				
 		],
 		expert: [['1.2.2.1', 'Internet Computer Core']],
 		history_link: 'https://check.ava.capetown'
 	};
+
+		
+	if (badgeReceipt.specialist.length == 0) {
+		// @ts-ignore
+		badgeReceipt.specialist = [['Not enough reputation']]
+	}
+	if (badgeReceipt.expert.length == 0) {
+		badgeReceipt.expert = [['Not enough reputation']]
+	}
 
 	isAuthenticated.subscribe((value) => {
 		loggedIn = value;
@@ -51,7 +59,7 @@
 </svelte:head>
 
 <div class="text-column">
-	<h1>aVa Check</h1>
+	<!-- <h1>aVa Check</h1> -->
 	{#if loggedIn}
 		<div>
 			Hi, {principal}!
@@ -72,9 +80,9 @@
 	<p />
 
 	<p>
-		{#if badgeReceipt.user !== 'Ivone Drake'}
+		<!-- {#if badgeReceipt.user !== 'Ivone Drake'} -->
 			<DsbtCard badge={badgeReceipt} />
-		{/if}
+		<!-- {/if} -->
 	</p>
 </div>
 
