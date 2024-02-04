@@ -51,30 +51,42 @@
 
 {#if loggedIn}
 	<div>
-		Hi, {principal}! 
-		
-		<button class="out" on:click={handleLogout}> Logout</button>
+		Hi, {principal}!
+
+		<button class="logout" on:click={handleLogout}> Logout</button>
 	</div>
 {:else}
-	<button on:click={handleLogin}> Login with Internet Identity</button>
-{/if}
+	<div class="center-container">
+		<button class="login" on:click={handleLogin}> Login with Internet Identity</button>
+	</div>{/if}
 
-{#if loggedIn }
-{#each certs as cert}
-	<CertCard cert={cert} />
-{/each}
-
-	<!-- <CertCard cert={certs[certs.length - 1]} /> -->
+{#if loggedIn}
+	{#each certs as cert}
+		<CertCard {cert} />
+	{/each}
 {/if}
 
 <style>
-	.out {
-		background-color: #f19823;
-		border: none;
+	.center-container {
+		display: flex;
+		justify-content: center; /* Выравнивание по горизонтали */
+		align-items: center; /* Выравнивание по вертикали */
+		height: 50vh; /* 100% высоты видимой части экрана */
+	}
+	.login,
+	.logout {
+		max-width: 300px;
+		background-color: #ee4817;
 		color: white;
-		padding: 10px 10px;
-		text-align: center;
-		text-decoration: none;
-		margin-left: 2rem;
-	}	
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.login:hover,
+	.logout:hover {
+		background-color: #d43504;
+	}
 </style>

@@ -67,10 +67,10 @@
 				<p>Your Reputation: {userBalance}</p>
 			{/if}
 			<p /> -->
-			<button class="out" on:click={handleLogout}> Logout</button>
+			<button class="logout" on:click={handleLogout}> Logout</button>
 		</div>
 	{:else}
-		<button on:click={handleLogin}> Login with Internet Identity</button>
+		<button class="login" on:click={handleLogin}> Login with Internet Identity</button>
 	{/if}
 	<p />
 
@@ -82,16 +82,20 @@
 </div>
 
 <style>
-	button {
-		max-width: 200px;
-	}
-	.out {
-		background-color: #f19823;
-		border: none;
+	.login,
+	.logout {
+		max-width: 300px;
+		background-color: #EE4817; 
 		color: white;
-		padding: 10px 10px;
-		text-align: center;
-		text-decoration: none;
-		margin-left: 2rem;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px; 
+		cursor: pointer;
+	}
+
+	.login:hover,
+	.logout:hover {
+		background-color: #d43504; 
 	}
 </style>
