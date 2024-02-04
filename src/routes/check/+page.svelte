@@ -72,10 +72,6 @@
 	{:else}
 		<button on:click={handleLogin}> Login with Internet Identity</button>
 	{/if}
-	<!-- <p>
-		This is a <a href="https:ava.capetown/en">aVa</a> dynamic Soulbound token checking page.
-	</p> -->
-
 	<p />
 
 	<p>

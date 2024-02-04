@@ -25,7 +25,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://github.com/ava-vs/reputation/wiki">our Wiki</a> to learn aVa</p>
+		<p>visit <a href="https://github.com/ava-vs/reputation/wiki" target="_blank">our Wiki</a> to learn aVa</p>
 	</footer>
 </div>
 

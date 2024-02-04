@@ -6,7 +6,7 @@
 
 <header>
 	<div class="corner">
-		<a href="https://ava.capetown/en">
+		<a href="https://ava.capetown/en" target="_blank">
 			<img src={logo} alt="aVa Home" />
 		</a>
 	</div>
@@ -35,7 +35,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/ava-vs/reputation">
+		<a href="https://github.com/ava-vs" target="_blank">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
