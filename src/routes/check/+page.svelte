@@ -7,15 +7,15 @@
 	let principal = '';
 	let userBalance = '';
 	let badgeReceipt = {
-		user: 'Ivone Drake',
+		user: 'fu2uo-afawr-hokkm-wohpv-kif7b-6a6ci-sog3h-dsu3c-3lkex-dow4k-nqe',
 		total_reputation: 692,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
-		beginner: [['1.2.3.5', 'Rust']],
+		beginner: [['1.2.3.5', 'Rust'],['1.2.3.4', 'Motoko']],
 		specialist: [	
-				
+				// ['1.2.3.4', 'Motoko']
 		],
-		expert: [['1.2.2.1', 'Internet Computer Core']],
+		expert:[],// [['1.2.1', 'aVa']],
 		history_link: 'https://check.ava.capetown'
 	};
 
@@ -25,6 +25,7 @@
 		badgeReceipt.specialist = [['Not enough reputation']]
 	}
 	if (badgeReceipt.expert.length == 0) {
+		// @ts-ignore
 		badgeReceipt.expert = [['Not enough reputation']]
 	}
 
@@ -62,11 +63,6 @@
 	{#if loggedIn}
 		<div>
 			Hi, {principal}!
-			<!-- <p />
-			{#if userBalance !== ''}
-				<p>Your Reputation: {userBalance}</p>
-			{/if}
-			<p /> -->
 			<button class="logout" on:click={handleLogout}> Logout</button>
 		</div>
 	{:else}
@@ -75,16 +71,15 @@
 	<p />
 
 	<p>
-		{#if badgeReceipt.user !== 'Ivone Drake'}
+		<!-- {#if badgeReceipt.user !== 'Ivone Drake'} -->
 			<DsbtCard badge={badgeReceipt} />
-		{/if}
+		<!-- {/if} -->
 	</p>
 </div>
 
 <style>
 	.login,
 	.logout {
-		max-width: 300px;
 		background-color: #EE4817; 
 		color: white;
 		padding: 14px 20px;

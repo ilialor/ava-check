@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import arrow from '$lib/images/arrow.svg';
 	import aVa_logo from '$lib/images/aVa_logo.png';
 	import card_background from '$lib/images/card-background.svg';
@@ -12,13 +12,12 @@
 
 	export let badgeReceipt = {
 		user: 'Ivone Drake',
-		total_reputation: 690,
+		total_reputation: 692,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
 		beginner: [['1.2.3.5', 'Rust']],
-		specialist: [['1.2.3.4', 'Python']
-		],
-		expert: [['1.2.2.1', 'Internet Computer Core']],
+		specialist: [['1.2.3.4', 'Motoko']],
+		expert: [['1.2.1', 'aVa']],
 		history_link: 'https://check.ava.capetown'
 	};
 
@@ -26,7 +25,6 @@
 	let icp_link = 'https://internetcomputer.org';
 
 	let evolution_link = 'https://check.ava.capetown';
-	
 </script>
 
 <main>
@@ -67,35 +65,34 @@
 				</div>
 				<div class="info-item">
 					<span class="info-label">Specialist:</span>
-					
-						<span
-							class="info-value"
-							id="specialist"
-							title={badgeReceipt.specialist.map((s) => s[1]).join('; ')}
+
+					<span
+						class="info-value"
+						id="specialist"
+						title={badgeReceipt.specialist.map((s) => s[1]).join('; ')}
+					>
+						{badgeReceipt.specialist.map((s) => s[0]).join('; ')}
+						<a href={evolution_link} target="_blank" class="card-logo-link"
+							><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
 						>
-							{badgeReceipt.specialist.map((s) => s[0]).join('; ')}
-							<a href={evolution_link} target="_blank" class="card-logo-link"
-								><img src={arrow} id="specialist-arrow" alt="arrow" title="Click to see more" /></a
-							>
-						</span>
-					
+					</span>
 				</div>
 				<div class="info-item">
 					<span class="info-label">Expert:</span>
-					
-						<span
-							class="info-value"
-							id="expert"
-							title={badgeReceipt.expert.map((s) => s[1]).join('; ')}
-						>
-							{badgeReceipt.expert.map((s) => s[0]).join('; ')}<a
-								href={evolution_link}
-								target="_blank"
-								class="card-logo-link"
-								><img src={arrow} id="expert-arrow" alt="arrow" title="Click to see more" /></a
-							></span
-						>
-					
+
+					<span
+						class="info-value"
+						id="expert"
+						title={badgeReceipt.expert.map((s) => s[1]).join('; ')}
+					>
+						{badgeReceipt.expert.map((s) => s[0]).join('; ')}<a
+							href={evolution_link}
+							target="_blank"
+							class="card-logo-link"
+							><img src={arrow} id="expert-arrow" alt="arrow" title="Click to see more" /></a
+						></span
+					> -->
+
 					<!-- <span
 						class="info-value"
 						id="expert"
@@ -107,7 +104,7 @@
 							><img src={arrow} id="expert-arrow" alt="arrow" title="Click to see more" /></a
 						></span
 					> -->
-				</div>
+				<!-- </div>
 			</div>
 			<div class="footer">
 				<a href={evolution_link} target="_blank" class="evolution-link"
@@ -166,16 +163,14 @@
 
 	.card {
 		display: flex;
-		flex-direction: column;
-		width: 22rem;
+		flex-direction: column;		
 		height: 23rem;
 		border-radius: 0.625rem;
 		border: 1px solid #fff;
-		background: linear-gradient(161deg, #00155d 8.46%, #013440 91.91%);
-		background-image: url({card_background});
 		color: var(--color-white);
 		overflow: hidden;
 		margin-top: 2rem;
+		min-width: 300px;
 	}
 
 	.card-header {
@@ -303,4 +298,4 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
-</style>
+</style> -->

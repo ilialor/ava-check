@@ -32,7 +32,7 @@
 		</a>
 
 		<div class="card__reputation">
-			<div class="reputation_count">{badge.total_reputation}</div>
+			<div class="reputation_count"><a href="https://github.com/ava-vs/reputation/wiki" target="_blank">{badge.total_reputation}</a></div>
 			<div class="reputation_text">Reputation</div>
 		</div>
 	</div>
@@ -52,23 +52,37 @@
 					<div class="key">Beginner:</div>
 					<span class="value" title={badge.beginner.map((s) => s[1]).join('; ')}>
 						{badge.beginner.map((s) => s[0]).join('; ')}
-						<a href={badge.history_link} target="_blank" class="arrow"><img src={triangle} id="beginner-arrow"alt="" /></a>
+						<a href={badge.history_link} target="_blank" class="arrow"
+							><img src={triangle} id="beginner-arrow" alt="" /></a
+						>
 					</span>
 				</li>
 
 				<li class="list_item">
 					<div class="key">Specialist:</div>
-					<span class="value" title={badge.specialist.map((s) => s[1]).join('; ')}>
-						{badge.specialist.map((s) => s[0]).join('; ')}
-						<a href={badge.history_link} target="_blank" class="arrow"><img src={triangle} id="specialist-arrow" alt=""/></a>
-					</span>
+					{#if badge.specialist.length == 0}
+						<span class="info-value">Not enough reputation</span>
+					{:else}
+						<span class="value" title={badge.specialist.map((s) => s[1]).join('; ')}>
+							{badge.specialist.map((s) => s[0]).join('; ')}
+							<a href={badge.history_link} target="_blank" class="arrow"
+								><img src={triangle} id="specialist-arrow" alt="" /></a
+							>
+						</span>
+					{/if}
 				</li>
 				<li class="list_item">
 					<div class="key">Expert:</div>
+					{#if badge.expert.length == 0}
+						<span class="info-value">Not enough reputation</span>
+					{:else}
 					<span class="value" title={badge.expert.map((s) => s[1]).join('; ')}>
 						{badge.expert.map((s) => s[0]).join('; ')}
-						<a href={badge.history_link} target="_blank" class="arrow"><img src={triangle} id="expert-arrow" alt="" /></a>
+						<a href={badge.history_link} target="_blank" class="arrow"
+							><img src={triangle} id="expert-arrow" alt="" /></a
+						>
 					</span>
+					{/if}
 				</li>
 			</ul>
 		</div>
@@ -84,15 +98,12 @@
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Montserrat:ital,wght@0,200;0,500;0,900;1,900&display=swap');
-	@font-face {
-		font-family: Helvetica;
-		src: url(fonts/helvetica/helvetica_bold.otf);
-	}
+	
 
 	.card {
 		background-repeat: no-repeat;
 		background-size: cover;
-		max-width: 350px;
+		min-width: 400px;
 		border-radius: 10px;
 		padding: 40px;
 		padding-top: 38px;
@@ -109,9 +120,12 @@
 		flex-direction: column;
 		align-items: center;
 	}
+	a {
+		color: #fff;
+	}
+	
 	.reputation_count {
 		color: #fff;
-		font-family: Helvetica;
 		font-size: 32px;
 		font-style: normal;
 		font-weight: 400;
@@ -154,12 +168,12 @@
 		margin-bottom: 28px;
 	}
 	.card__list {
-		margin-bottom: 48px;
+		margin-bottom: 20px;
 	}
-  .arrow {
-    display: inline-block;
-  }
-  #beginner-arrow,
+	.arrow {
+		display: inline-block;
+	}
+	#beginner-arrow,
 	#expert-arrow,
 	#specialist-arrow {
 		vertical-align: middle;
@@ -188,7 +202,7 @@
 	}
 	.value {
 		color: #fff;
-		max-width: 100px;
+		max-width: 200px;
 		font-family: Montserrat;
 		font-size: 12px;
 		font-style: normal;

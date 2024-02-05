@@ -69,9 +69,9 @@
 <style>
 	.center-container {
 		display: flex;
-		justify-content: center; /* Выравнивание по горизонтали */
-		align-items: center; /* Выравнивание по вертикали */
-		height: 50vh; /* 100% высоты видимой части экрана */
+		justify-content: center; 
+		align-items: center; 
+		height: 50vh; 
 	}
 	.login,
 	.logout {
