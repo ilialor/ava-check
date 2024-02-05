@@ -7,7 +7,7 @@
 	let principal = '';
 	let userBalance = '';
 	let badgeReceipt = {
-		user: 'fu2uo-afawr-hokkm-wohpv-kif7b-6a6ci-sog3h-dsu3c-3lkex-dow4k-nqe',
+		user: 'Ivone Drake',
 		total_reputation: 692,
 		ava_link: 'https://ava.capetown',
 		ic_link: 'https://internetcomputer.org',
@@ -71,9 +71,9 @@
 	<p />
 
 	<p>
-		<!-- {#if badgeReceipt.user !== 'Ivone Drake'} -->
+		{#if badgeReceipt.user !== 'Ivone Drake'}
 			<DsbtCard badge={badgeReceipt} />
-		<!-- {/if} -->
+		{/if}
 	</p>
 </div>
 
