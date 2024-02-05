@@ -61,7 +61,7 @@
 				<li class="list_item">
 					<div class="key">Specialist:</div>
 					{#if badge.specialist.length == 0}
-						<span class="info-value">Not enough reputation</span>
+						<span class="value">Not enough reputation</span>
 					{:else}
 						<span class="value" title={badge.specialist.map((s) => s[1]).join('; ')}>
 							{badge.specialist.map((s) => s[0]).join('; ')}
@@ -74,7 +74,7 @@
 				<li class="list_item">
 					<div class="key">Expert:</div>
 					{#if badge.expert.length == 0}
-						<span class="info-value">Not enough reputation</span>
+						<span class="value">Not enough reputation</span>
 					{:else}
 					<span class="value" title={badge.expert.map((s) => s[1]).join('; ')}>
 						{badge.expert.map((s) => s[0]).join('; ')}
@@ -103,7 +103,7 @@
 	.card {
 		background-repeat: no-repeat;
 		background-size: cover;
-		min-width: 400px;
+		width: 400px;
 		border-radius: 10px;
 		padding: 40px;
 		padding-top: 38px;
