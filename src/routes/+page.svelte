@@ -5,6 +5,9 @@
 
 	let loggedIn = false;
 	let principal = '';
+	principalId.subscribe((value) => {
+		principal = value;		
+	});
 
 	function handleLogin() {
 		loginII();
