@@ -24,6 +24,13 @@
 	 * @type {Certificate[]}
 	 */
 	let certs = [];
+	// certs[0] = {owner : "222",
+	// name : "Cert 1",
+	// publisher : "222",
+	// tokenId : "222",
+	// basis : "222",
+	// date : "222",
+	// reputation : {category : "222", value : "222"}};
 	let principal = '';
 
 	principalId.subscribe((value) => {
@@ -58,7 +65,8 @@
 {:else}
 	<div class="center-container">
 		<button class="login" on:click={handleLogin}> Login with Internet Identity</button>
-	</div>{/if}
+	</div>
+{/if}
 
 {#if loggedIn}
 	{#each certs as cert}
@@ -69,9 +77,9 @@
 <style>
 	.center-container {
 		display: flex;
-		justify-content: center; 
-		align-items: center; 
-		height: 50vh; 
+		justify-content: center;
+		align-items: center;
+		height: 50vh;
 	}
 	.login,
 	.logout {

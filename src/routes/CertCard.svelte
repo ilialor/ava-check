@@ -1,11 +1,11 @@
 <script>
-	import logo_agora from '$lib/images/ag.svg';
+	// import logo_agora from '$lib/images/ag.svg';
 	import logo_ava from '$lib/images/logo.png';
-	import back from '$lib/images/background-frame.svg';
+	import back from '$lib/images/back-default.png';
 	import icp_logo from '$lib/images/icp-logo.svg';
 	import arrow from '$lib/images/arrow.svg';
 	export let cert = {
-		owner: 'aaaaa-aa',
+		owner: 'fu2uo-afawr-hokkm',
 		name: 'fu2uo-afawr-hokkm-wohpv-kif7b-6a6ci-sog3h-dsu3c-3lkex-dow4k-nqe',
 		publisher: 'fu2uo-afawr-hokkm-wohpv-kif7b-6a6ci-sog3h-dsu3c-3lkex-dow4k-nqe',
 		tokenId: '42',
@@ -19,7 +19,7 @@
 </script>
 
 <section>
-	{#if cert && cert.owner !== 'aaaaa-aa'}
+	<!-- {#if cert && cert.owner !== 'aaaaa-aa'} -->
 	<div class="certificate">
 		<div class="cert-frame">
 			<div class="background-frame">
@@ -28,7 +28,7 @@
 			<a href="https://internetcomputer.org" target="_blank"
 				><img class="icp-logo" src={icp_logo} alt="ICP" /></a
 			>
-			<img class="agorapp-logo" src={logo_agora} alt="agora logo" />
+			<!-- <img class="agorapp-logo" src={logo_agora} alt="agora logo" /> -->
 			<div class="content-frame">
 				<div class="item-list">
 					<div class="name-item-group">
@@ -98,7 +98,7 @@
 			>
 		</div>
 	</div>
-	{/if}
+	<!-- {/if} -->
 </section>
 
 <style>
