@@ -2,11 +2,12 @@
 	import { loginII, logout, isAuthenticated, principalId } from '../auth.js';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import copy_icon from '$lib/images/copy_icon.png';
 
 	let loggedIn = false;
 	let principal = '';
 	principalId.subscribe((value) => {
-		principal = value;		
+		principal = value;
 	});
 
 	function handleLogin() {
@@ -20,6 +21,11 @@
 	isAuthenticated.subscribe((value) => {
 		loggedIn = value;
 	});
+
+	async function copyValue() {
+		await navigator.clipboard.writeText(principal);
+		alert('ID скопирован: ' + principal);
+	}
 </script>
 
 <svelte:head>
@@ -35,16 +41,18 @@
 				<img src={welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
-
 		to aVa Reputation
 		<br />
 	</h1>
 	{#if loggedIn}
-		<h2>
-			Hi, {principal}! <br /> Save your Internet Identity id and number for later use. <br /> <br />
-			<!-- You can check your <a href="/cert">Certificates</a> <br />
-			and <a href="/check">aVa Soulbound Reputation Token</a>. -->
-		</h2>
+		<h2>Your aVa id is:</h2>		
+		<span class="user_principal"
+			>{principal}
+			<button on:click={copyValue}><img class="copy_icon" src={copy_icon} alt="Copy ID" /></button>
+		</span>
+		<br />
+		<h2>Save your this id and Internet Identity number for later use. <br /></h2>
+		<br />
 		<button class="logout" on:click={handleLogout}> Logout</button>
 	{:else}
 		<button class="login" on:click={handleLogin}> Please Login with Internet Identity</button>
@@ -91,17 +99,23 @@
 
 	.login,
 	.logout {
-		background-color: #EE4817; 
+		background-color: #ee4817;
 		color: white;
 		padding: 14px 20px;
 		margin: 8px 0;
 		border: none;
-		border-radius: 4px; 
+		border-radius: 4px;
 		cursor: pointer;
 	}
 
 	.login:hover,
 	.logout:hover {
-		background-color: #d43504; 
+		background-color: #d43504;
+	}
+
+	.copy_icon {
+		width: 15px;
+		height: 20px;
+		
 	}
 </style>
