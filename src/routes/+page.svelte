@@ -1,6 +1,6 @@
 <script>
 	import { loginII, logout, isAuthenticated, principalId } from '../auth.js';
-	import welcome from '$lib/images/new_welcome.png';
+	import welcome from '$lib/images/new_welcome.svg';
 	// import welcome_fallback from '$lib/images/svelte-welcome.png';
 	import copy_icon from '$lib/images/copy_icon.png';
 
