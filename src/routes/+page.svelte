@@ -1,7 +1,7 @@
 <script>
 	import { loginII, logout, isAuthenticated, principalId } from '../auth.js';
 	import welcome from '$lib/images/new_welcome.svg';
-	// import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import back from '$lib/images/new_back.svg';
 	import copy_icon from '$lib/images/copy_icon.png';
 
 	let loggedIn = false;
@@ -33,7 +33,7 @@
 	<meta name="description" content="aVa Reputation Demo app" />
 </svelte:head>
 
-<section>
+<section style:background-image={`url(${back})`}>
 	<h1>
 		<span class="welcome">
 			<picture>
