@@ -1,7 +1,7 @@
 <script>
 	import { loginII, logout, isAuthenticated, principalId } from '../auth.js';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import welcome from '$lib/images/new_welcome.png';
+	// import welcome_fallback from '$lib/images/svelte-welcome.png';
 	import copy_icon from '$lib/images/copy_icon.png';
 
 	let loggedIn = false;
@@ -38,10 +38,9 @@
 		<span class="welcome">
 			<picture>
 				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
+				<img src={welcome} alt="Welcome" />
 			</picture>
-		</span>
-		to aVa Reputation
+		</span>		
 		<br />
 	</h1>
 	{#if loggedIn}
@@ -80,13 +79,13 @@
 		padding: 0 0 calc(100% * 495 / 2048) 0;
 	}
 
-	.welcome img {
+	/* .welcome img {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		display: block;
-	}
+	} */
 
 	h2 {
 		max-width: 450px;

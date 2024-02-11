@@ -1,6 +1,5 @@
 <script>
 	import { _getDocuments } from './+page.js';
-	import { getCert } from '../canister_calls.js';
 	import { loginII, logout, isAuthenticated, principalId } from '../../auth.js';
 	import CertCard from '../CertCard.svelte';
 
