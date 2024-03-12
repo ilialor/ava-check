@@ -33,7 +33,7 @@
 	<meta name="description" content="aVa Reputation Demo app" />
 </svelte:head>
 
-<section style:background-image={`url(${back})`}>
+<section >
 	<h1>
 		<span class="welcome">
 			<picture>
