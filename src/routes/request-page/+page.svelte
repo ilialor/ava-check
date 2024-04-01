@@ -64,15 +64,16 @@
 <div class="text-column">
 	{#if loggedIn}
 		<div>
-			Page in progress!!..
+			<h1>Page in progress.</h1>
 			<br />
 			<!-- Hi, {principal}! -->
 			Software Deployment Request
 			<br />
 			We are ready to deploy our open source projects for you!
 			<br />
-			Just type your email address, choose one of our projects, and we will help you get it running for
-			your purposes!
+			Just type your email address, choose one of our projects,
+			<br />
+			and we will help you get it running for your purposes!
 			<br />
 			<button class="logout" on:click={handleLogout}> Logout</button>
 		</div>

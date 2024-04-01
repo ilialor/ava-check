@@ -64,10 +64,12 @@
 <div class="text-column">
 	{#if loggedIn}
 		<div>
-			Page in progress.
+			<h1>Page in progress.</h1>
 			<br />
 			<!-- Hi, {principal}!  -->
 			You can select a DAO to join here.
+			<br />
+			Event Hub DAO aVa Reputation DAO IT KoLhoz DAO
 			<br />
 			<button class="logout" on:click={handleLogout}> Logout</button>
 		</div>
