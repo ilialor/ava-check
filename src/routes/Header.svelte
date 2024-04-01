@@ -25,6 +25,12 @@
 			<li aria-current={$page.url.pathname.startsWith('/check') ? 'page' : undefined}>
 				<a href="/check">Check</a>
 			</li>
+			<li aria-current={$page.url.pathname.startsWith('/request') ? 'page' : undefined}>
+				<a href="/request-page">Request</a>
+			</li>
+			<li aria-current={$page.url.pathname.startsWith('/daos') ? 'page' : undefined}>
+				<a href="/daos">DAOs</a>
+			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
