@@ -1,7 +1,6 @@
 <script>
 	import { loginII, logout, isAuthenticated, principalId } from '../auth.js';
 	import welcome from '$lib/images/new_welcome.svg';
-	import back from '$lib/images/new_back.svg';
 	import copy_icon from '$lib/images/copy_icon.png';
 
 	let loggedIn = false;
@@ -29,12 +28,12 @@
 </script>
 
 <svelte:head>
-	<title>aVa Check Home</title>
-	<meta name="description" content="aVa Reputation Demo app" />
+	<title>aVa Event Hub Client</title>
+	<meta name="description" content="aVa Demo Event Client" />
 </svelte:head>
 
 <section >
-	<h1>
+	<!-- <h1>
 		<span class="welcome">
 			<picture>
 				<source srcset={welcome} type="image/webp" />
@@ -42,7 +41,7 @@
 			</picture>
 		</span>		
 		<br />
-	</h1>
+	</h1> -->
 	{#if loggedIn}
 		<h2>Your aVa id is:</h2>		
 		<span class="user_principal"
